@@ -15,8 +15,12 @@ class dbobj {
 		$this->sql->query( "SELECT * FROM " . $this->table );
 	}
 
+	function getByID( $name ) {
+		$this->sql->query( "SELECT * FROM " . $this->table . " WHERE " . $this->pk_field . " = '" . $name . "';" );
+	}
+
 	function getNext() {
-		return $this->sql->getNext();
+		return $this->sql->getNextRow();
 	}
 
 }

@@ -1,7 +1,7 @@
 <?php
 
 if ( isset ( $_SESSION['id'] ) ) {
-	header( "Location: " . $SITE_PREFIX . "t/dash" );
+	header( "Location: " . $SITE_PREFIX . "t/home" );
 }
 
 $TITLE   = "Login Page";
