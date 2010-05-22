@@ -1,4 +1,0 @@
-			</div>
-		</div>
-	</body>
-</body>
