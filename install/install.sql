@@ -13,6 +13,17 @@ CREATE TABLE users (
 	PRIMARY KEY( uID )
 );
 
+
+INSERT INTO users VALUES (
+	'',
+	'Paul Tagliamonte',
+	'paultag',
+	'paultag@whube.com',
+	'EN',
+	'-0500',
+	'testing'
+);
+
 CREATE TABLE user_rights ( 
 	userID         INTEGER NOT NULL, /* FK, users */
 	admin          BOOL,
