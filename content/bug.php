@@ -9,6 +9,7 @@ $row = $b->getNext();
 $TITLE = "Bug #" . $row['bID'];
 $CONTENT = "
 <h1>" . $row['title'] . "</h1>
+This bug is against <b>" . $row['package'] . "</b>
 ";
 
 ?>
