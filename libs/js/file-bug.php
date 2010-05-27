@@ -20,9 +20,11 @@ $SCRIPT .= "
 		if ( data.success ) {
 			$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/ok.png\" alt = \"\" />');
 			$('#project').addClass(\"ok\");
+			$('#project-descr').html( data.descr );
 		} else {
 			$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/no.png\" alt = \"\" />');
 			$('#project').removeClass(\"ok\");
+			$('project-descr').html('&nbsp;');
 		}
 ";
 

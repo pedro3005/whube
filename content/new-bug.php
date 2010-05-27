@@ -17,6 +17,11 @@ $CONTENT .= "
 	<td><div id = 'project-ok' ><img src = '" . $SITE_PREFIX . "imgs/no.png' alt = '' /></div></td>
 </tr>
 <tr>
+	<td></td>
+	<td><div id = 'project-descr' >&nbsp;</div></td>
+	<td></td>
+</tr>
+<tr>
 	<td>So, I need a poetic name for this issue</td>
 	<td><input type = 'text' name = 'title' size = '40' /></td>
 	<td></td>

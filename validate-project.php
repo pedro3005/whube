@@ -31,6 +31,7 @@ if ( isset ( $_GET['p'] ) ) {
 		$d['bestmatch'] = $row['project_name'];
 		if ( $row['project_name'] == $id ) {
 			$d['success'] = true;
+			$d['descr'] = $row['descr'];
 		}
 	}
 
