@@ -9,6 +9,7 @@ CREATE TABLE users (
 	email          VARCHAR(255),
 	locale         VARCHAR(8),
 	timezone       VARCHAR(8),
+	password       VARCHAR(255), /* HASHED, DUH */
 	PRIMARY KEY( uID )
 );
 
