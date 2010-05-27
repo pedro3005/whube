@@ -11,7 +11,8 @@ include( $app_root . "libs/php/globals.php" );
 $p = htmlentities( $_GET['p'] );
 $toks = breakUpLine( $p );
 
-$_GET['args'] = $toks;
+$argv = $toks;
+$argc = sizeof( $toks );
 
 if (
 	isset ( $toks[0] ) &&
