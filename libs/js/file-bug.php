@@ -24,7 +24,11 @@ $SCRIPT .= "
 		} else {
 			$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/no.png\" alt = \"\" />');
 			$('#project').removeClass(\"ok\");
-			$('#project-descr').html( \"Did you mean: \" + data.bestmatch + \"?\" );
+			if ( data.bestmatch ) {
+				$('#project-descr').html( \"Did you mean: \" + data.bestmatch + \"?\" );
+			} else {
+				$('#project-descr').html( \"I have no goddamn clue what you are talking about.\" );
+			}
 		}
 ";
 
