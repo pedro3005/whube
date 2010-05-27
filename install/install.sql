@@ -83,8 +83,8 @@ INSERT INTO severity VALUES ( '', 'OMGWTFBBQ', TRUE );
 
 CREATE TABLE bugs ( 
 	bID            INTEGER NOT NULL AUTO_INCREMENT, /* PK */
-	bug_status     INTEGER NOT NULL, /* FK, status */
-	bug_severity   INTEGER NOT NULL, /* FK, severity */
+	bug_status     INTEGER NOT NULL DEFAULT 1, /* FK, status */
+	bug_severity   INTEGER NOT NULL DEFAULT 1, /* FK, severity */
 	package        INTEGER NOT NULL, /* FK, project */
 	reporter       INTEGER NOT NULL, /* FK, users */
 	owner          INTEGER NOT NULL, /* FK, users */

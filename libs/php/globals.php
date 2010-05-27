@@ -2,6 +2,8 @@
 
 $php_root = dirname(  __FILE__ ) . "/";
 
+include( $php_root . "../../model/sql.php" );
+
 $JS_ROOT = $php_root . "../js/";
 
 function useScript( $id ) {
@@ -32,6 +34,24 @@ function requireLogin() {
 		$_SESSION['err'] = "Login before you can hit that page!";
 		header("Location: " . $SITE_PREFIX . "t/login" );
 		exit(0);
+	}
+}
+
+function getStatus( $status ) {
+	if ( isset ( $status ) ) {
+		$sql = new sql();
+		$sql->query("SELECT * FROM status WHERE statusID = " . $status );
+		$ret = $sql->getNextRow();
+		return $ret;
+	}
+}
+
+function getSeverity( $status ) {
+	if ( isset ( $status ) ) {
+		$sql = new sql();
+		$sql->query("SELECT * FROM severity WHERE severityID = " . $status );
+		$ret = $sql->getNextRow();
+		return $ret;
 	}
 }
 
