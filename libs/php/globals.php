@@ -26,5 +26,13 @@ function breakUpLine( $line ) {
 	return $ret;
 }
 
+function requireLogin() {
+	global $SITE_PREFIX;
+	if ( ! isset ( $_SESSION['id'] ) ) {
+		$_SESSION['err'] = "Login before you can hit that page!";
+		header("Location: " . $SITE_PREFIX . "t/login" );
+		exit(0);
+	}
+}
 
 ?>

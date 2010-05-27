@@ -2,8 +2,9 @@
 session_start();
 
 include( "conf/site.php" );
+include( "libs/php/globals.php" );
+requireLogin();
 
-if ( isset ( $_SESSION['id'] ) ) {
 	if (
 isset ( $_POST['project'] ) &&
 isset ( $_POST['title']   ) &&
@@ -48,10 +49,5 @@ isset ( $_POST['descr']   )
 		header("Location: $SITE_PREFIX" . "t/new-bug");
 		exit(0);
 	}
-} else {
-	$_SESSION['err'] = "Please log in!";
-	header("Location: $SITE_PREFIX" . "t/login");
-	exit(0);
-}
 
 ?>

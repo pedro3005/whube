@@ -29,4 +29,22 @@ if ( isset ( $_SESSION['msg'] ) ) {
 	unset( $_SESSION['msg'] );
 }
 		?>
+<!--
+Debug Frame:
 
+Session Status:
+<?php
+	print_r( $_SESSION );
+?>
+
+GET Status:
+<?php
+	print_r( $_GET );
+?>
+
+POST Status:
+<?php
+	print_r( $_POST );
+?>
+
+-->

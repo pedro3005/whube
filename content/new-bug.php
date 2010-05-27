@@ -1,5 +1,7 @@
 <?php
 
+requireLogin();
+
 useScript( "jQuery.js" );
 useScript( "file-bug.php" );
 

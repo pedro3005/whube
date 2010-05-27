@@ -2,6 +2,8 @@
 
 include( "model/user.php" );
 
+requireLogin();
+
 $TITLE    = "Welcome Home!";
 
 $realname = $_SESSION['real_name'];
