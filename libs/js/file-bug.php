@@ -24,7 +24,7 @@ $SCRIPT .= "
 		} else {
 			$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/no.png\" alt = \"\" />');
 			$('#project').removeClass(\"ok\");
-			$('project-descr').html('&nbsp;');
+			$('#project-descr').html( \"Did you mean: \" + data.bestmatch + \"?\" );
 		}
 ";
 

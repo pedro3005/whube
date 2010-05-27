@@ -45,7 +45,7 @@ CREATE TABLE projects (
 
 INSERT INTO projects VALUES (
 	'',
-	'Whube',
+	'whube',
 	'Whube is this project right here!',
 	1,
 	TRUE
