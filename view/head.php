@@ -5,6 +5,15 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<title><?php echo $TITLE; ?></title>
 		<link href="<?php echo $SITE_PREFIX; ?>css/default.css" type="text/css" rel="stylesheet" ></link>
+<?php
+
+if ( isset ( $SCRIPT ) ) { // this shit right here rocks.
+	foreach ( $SCRIPT as $key ) {
+		echo "		<script src = '" . $SITE_PREFIX . "libs/js/" . $key . "' type = 'text/javascript'></script>\n";
+	}
+}
+
+?>
 	</head>
 	<body>
 		<div class = "container" >

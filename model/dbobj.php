@@ -34,7 +34,12 @@ class dbobj {
 	function getByCol( $cID, $id ) {
                 $this->sql->query( "SELECT * FROM " . $this->table . " WHERE " . $cID . " = '" . $id . "'; " );
 	}
-
+	function searchByKey( $cID, $id ) {
+                $this->sql->query( "SELECT * FROM " . $this->table . " WHERE " . $cID . " LIKE '%" . $id . "%'; " );
+	}
+	function numRows() {
+		return $this->sql->numrows();
+	}
 	function getNext() {
 		return $this->sql->getNextRow();
 	}

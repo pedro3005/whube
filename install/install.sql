@@ -42,6 +42,15 @@ CREATE TABLE projects (
 	PRIMARY KEY( pID )
 );
 
+
+INSERT INTO projects VALUES (
+	'',
+	'Whube',
+	'Whube is this project right here!',
+	1,
+	TRUE
+);
+
 CREATE TABLE status (
 	statusID       INTEGER NOT NULL AUTO_INCREMENT, /* PK */
 	status_name    VARCHAR(255),

@@ -3,9 +3,9 @@
      *  License:     GPLv3
      *  Author:      Paul Tagliamonte <paultag@ubuntu.com>
      *  Description:
-     *    uzer class
+     *    project class
      */
-if ( ! class_exists ( "user" ) ) {
+if ( ! class_exists ( "project" ) ) {
 
 if ( ! class_exists( "dbobj" ) ) {
         // last ditch...
@@ -13,9 +13,9 @@ if ( ! class_exists( "dbobj" ) ) {
         include( $model_root . "dbobj.php" );
 }
 
-class user extends dbobj {
-	function user() {
-		dbobj::dbobj("users", "uID");
+class project extends dbobj {
+	function project() {
+		dbobj::dbobj("projects", "pID");
 	}
 }
 }

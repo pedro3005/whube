@@ -4,6 +4,7 @@
 
 	$CONTENT = "";
 	$TITLE   = "Whube!";
+	$SCRIPT  = array();
 
 	// CONF THE FOLLOWING
 

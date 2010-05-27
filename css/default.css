@@ -11,6 +11,10 @@ h1 {
 	font-variant:         small-caps;
 }
 
+.ok {
+	background-color:     #85e517;
+}
+
 .message {
 	background-color:     #136085;
 	color:                #000000;
