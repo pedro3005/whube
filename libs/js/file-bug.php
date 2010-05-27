@@ -1,6 +1,6 @@
 <?php
 
-$js_root        = dirname(  __FILE__ ) . "/";
+$js_root	= dirname(  __FILE__ ) . "/";
 
 include( $js_root . "../../conf/site.php" );
 include( $js_root . "../../libs/php/globals.php" );
@@ -11,6 +11,25 @@ header( "Content-type: text/javascript" );
 $PROJECT_FINDER = $SITE_PREFIX . "validate-project.php";
 
 $SCRIPT= <<<EOF
+var lastPressed = new Date();
+lastPressed.setDate(0);
+fetch();
+
+function handleLoading() {
+	lastPressed = new Date();
+	fetch();
+}
+
+function fetch() {
+	var t = new Date();
+	if ( lastPressed.getTime() + 800 < t.getTime() ) {
+		lastPressed = new Date();
+		validate();
+	} else {
+		setTimeout( fetch, 10 );
+	}
+}
+
 function validate() {
 	tex = $('#project').val();
 	$.getJSON("$PROJECT_FINDER?p=" + tex,function(data){
@@ -30,17 +49,15 @@ $SCRIPT .= "
 				$('#project-descr').html( \"I have no goddamn clue what you are talking about.\" );
 			}
 		}
-";
-
-$SCRIPT .= <<<EOF
 	});
 }
 window.onload = function(){
-	$('#project').keyup(function(event) {	
-		validate();
+	$('#project').keyup(function(event) {
+		$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/loading.png\" alt = \"\" />');
+		handleLoading();
 	});
 }
-EOF;
+";
 
 echo $SCRIPT;
 
