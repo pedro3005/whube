@@ -1,0 +1,74 @@
+DROP DATABASE IF EXISTS whube;
+CREATE DATABASE whube;
+use whube;
+
+CREATE TABLE users (
+	uID            INTEGER NOT NULL AUTO_INCREMENT, /* PK */
+	real_name      VARCHAR(255),
+	username       VARCHAR(255) UNIQUE,
+	email          VARCHAR(255),
+	locale         VARCHAR(8),
+	timezone       VARCHAR(8),
+	PRIMARY KEY( uID )
+);
+
+CREATE TABLE user_rights ( 
+	userID         INTEGER NOT NULL, /* FK, users */
+	admin          BOOL,
+	staff          BOOL,
+	doner          BOOL,
+	member         BOOL,
+	PRIMARY KEY( userID )
+);
+
+CREATE TABLE projects ( 
+	pID            INTEGER NOT NULL AUTO_INCREMENT, /* PK */
+	project_name   VARCHAR(255) UNIQUE, /* like an alias */
+	descr          TEXT,
+	owner          INTEGER NOT NULL, /* FK, users */
+	active         BOOL,
+	PRIMARY KEY( pID )
+);
+
+CREATE TABLE status (
+	statusID       INTEGER NOT NULL AUTO_INCREMENT, /* PK */
+	status_name    VARCHAR(255),
+	critical       BOOL,
+	PRIMARY KEY( statusID )
+);
+
+INSERT INTO status VALUES ( '', 'New', FALSE ); /* status 1 ftw */
+INSERT INTO status VALUES ( '', 'Bullcrap', FALSE );
+INSERT INTO status VALUES ( '', 'Triaged', FALSE );
+INSERT INTO status VALUES ( '', 'Reproduced', TRUE );
+INSERT INTO status VALUES ( '', 'In Progress', TRUE );
+INSERT INTO status VALUES ( '', 'Fix Commited', FALSE );
+INSERT INTO status VALUES ( '', 'Fix Released', FALSE );
+
+CREATE TABLE severity (
+	severityID     INTEGER NOT NULL AUTO_INCREMENT, /* PK */
+	severity_name  VARCHAR(255),
+	critical       VARCHAR(255),
+	PRIMARY KEY( severityID )
+);
+
+INSERT INTO severity VALUES ( '', 'New', FALSE );
+INSERT INTO severity VALUES ( '', 'Wishlist', FALSE );
+INSERT INTO severity VALUES ( '', 'Low', FALSE );
+INSERT INTO severity VALUES ( '', 'Medium', TRUE );
+INSERT INTO severity VALUES ( '', 'High', TRUE );
+INSERT INTO severity VALUES ( '', 'Critical', TRUE );
+INSERT INTO severity VALUES ( '', 'OMGWTFBBQ', TRUE );
+
+CREATE TABLE bugs ( 
+	bID            INTEGER NOT NULL AUTO_INCREMENT, /* PK */
+	bug_status     INTEGER NOT NULL, /* FK, status */
+	bug_severity   INTEGER NOT NULL, /* FK, severity */
+	package        INTEGER NOT NULL, /* FK, project */
+	reporter       INTEGER NOT NULL, /* FK, users */
+	owner          INTEGER NOT NULL, /* FK, users */
+	title          VARCHAR(255),
+	descr          TEXT,
+	PRIMARY KEY ( bID )
+);
+
