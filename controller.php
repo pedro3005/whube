@@ -9,15 +9,14 @@ include( $app_root . "conf/site.php" );
 include( $app_root . "libs/php/globals.php" );
 
 $p = htmlentities( $_GET['p'] );
+$toks = breakUpLine( $p );
 
-$toks = explode( "/", $p );
-
+$_GET['args'] = $toks;
 
 if (
 	isset ( $toks[0] ) &&
 	$toks[0] != ""
 ) {
-
 	$idz = $app_root . "content/" . basename( $toks[0] ) . ".php";
 	if ( file_exists( $idz ) ) {
 		include( $idz );

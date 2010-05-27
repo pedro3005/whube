@@ -15,6 +15,7 @@ you know, is Whube.<br />
 EOF;
 
 $CONTENT .= "<a href = '" . $SITE_PREFIX . "t/logout' >Logout</a><br />";
+$CONTENT .= "<a href = '" . $SITE_PREFIX . "t/new-bug' >New Bug</a><br />";
 
 
 

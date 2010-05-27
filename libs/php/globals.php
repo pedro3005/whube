@@ -11,5 +11,20 @@ function useScript( $id ) {
 	}
 }
 
+function breakUpLine( $line ) {
+	$pos = strrpos($line, "/");
+	if ($pos === false) {
+		return array($line);
+	} else {
+		$prefix  = trim(substr( $line, 0, $pos ) );
+		$postfix = trim(substr( $line, $pos + 1, strlen( $line )) );
+		$prefix  = htmlentities( $prefix );
+		$postfix = htmlentities( $postfix );
+
+		$ret = array( $prefix, $postfix );
+	}
+	return $ret;
+}
+
 
 ?>

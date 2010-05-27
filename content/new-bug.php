@@ -28,7 +28,7 @@ $CONTENT .= "
 </tr>
 <tr>
 	<td>And a nice description</td>
-	<td><textarea rows = '20' cols = '50' ></textarea></td>
+	<td><textarea rows = '20' cols = '50' name = 'descr' ></textarea></td>
 	<td></td>
 </tr>
 <tr>

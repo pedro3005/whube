@@ -28,6 +28,30 @@ class dbobj {
 		$this->sql->query( "SELECT * FROM " . $this->table );
 	}
 
+/*
+
+INSERT INTO table_name (column1, column2, column3,...)
+VALUES (value1, value2, value3,...)
+
+*/
+	function createNew( $items ) {
+		// key => value
+		$keys = "";
+		$values = "";
+		foreach ( $items as $key => $value ) {
+			if ( ! is_numeric( $value ) ) {
+				$value = "'$value'";
+			} 
+			if ( $keys != "" ) { $keys .= ", "; }
+			$keys .= $key;
+
+			if ( $values != "" ) { $values .= ", "; }
+			$values .= $value;
+		}
+		$this->sql->query( "INSERT INTO " . $this->table . " ( " . $keys . " ) VALUES ( " . $values . " );" );
+		return $this->sql->getLastID();
+	}
+
 	function getAllByPK( $pk ) {
 		$this->sql->query( "SELECT * FROM " . $this->table . " WHERE " . $this->pk_field . " = '" . $pk . "'; " );
 	}
