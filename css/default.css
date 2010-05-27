@@ -11,6 +11,26 @@ h1 {
 	font-variant:         small-caps;
 }
 
+.message {
+	background-color:     #136085;
+	color:                #000000;
+	-moz-border-radius:   10px;
+	-webkit-border-radius:10px;
+	font-size:            1.2em;
+	padding:              20px;
+	margin:               20px;
+}
+
+.error {
+	background-color:     #c12300;
+	color:                #000000;
+	-moz-border-radius:   10px;
+	-webkit-border-radius:10px;
+	font-size:            1.2em;
+	padding:              20px;
+	margin:               20px;
+}
+
 .content {
 	padding:              10px;
 	margin:               10px;

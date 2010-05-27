@@ -8,7 +8,7 @@ if ( isset( $_POST['logout'] ) ) {
 	session_destroy();
 	session_start();
 	$_SESSION['msg'] = "See ya' later! I miss ya already!";
-	header("Location: $SITE_PREFIX/t/login");
+	header("Location: " . $SITE_PREFIX . "t/login");
 	exit(0);
 }
 
@@ -29,11 +29,11 @@ if ( isset( $_POST['login'] ) ) {
 			$_SESSION['lang']       =   $foo['lang'];
 
 			$_SESSION['msg'] = "Well done! Welcome in!";
-			header("Location: $SITE_PREFIX/t/home");
+			header("Location: " . $SITE_PREFIX . "t/home");
 			exit(0);
 		} else {
 			$_SESSION['err'] = "Login Failure";
-			header("Location: $SITE_PREFIX/t/login");
+			header("Location: " . $SITE_PREFIX . "t/login");
 			exit(0);
 		}
 	} else {

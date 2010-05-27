@@ -1,7 +1,15 @@
 <?php
 
+include( "model/user.php" );
+
 $TITLE   = "Welcome Home!";
-$CONTENT = "Well done.";
 
+$realname = $_SESSION['real_name'];
 
+$CONTENT .= <<<EOF
+<h1>Welcome Home!</h1>
+So, welcome back, $realname. Looks like you are
+logged in and everything. Boohyeah. Well this, as
+you know, is Whube.
+EOF;
 ?>
