@@ -25,15 +25,9 @@ class dbobj {
 	}
 
 	function getAll() {
-		$this->sql->query( "SELECT * FROM " . $this->table );
+		$this->sql->query( "SELECT * FROM " . $this->table . " ORDER BY " . $this->pk_field . " DESC" );
 	}
 
-/*
-
-INSERT INTO table_name (column1, column2, column3,...)
-VALUES (value1, value2, value3,...)
-
-*/
 	function createNew( $items ) {
 		// key => value
 		$keys = "";
