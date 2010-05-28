@@ -13,6 +13,16 @@ function useScript( $id ) {
 	}
 }
 
+function preload( $l, $w, $src ) {
+	global $PRELOAD;
+	$payload = array();
+	$payload['w']   = $w;
+	$payload['h']   = $l;
+	$payload['src'] = $src;
+
+	array_push( $PRELOAD, $payload );
+}
+
 function breakUpLine( $line ) {
 	$pos = strrpos($line, "/");
 	if ($pos === false) {

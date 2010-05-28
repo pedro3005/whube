@@ -8,9 +8,23 @@
 <?php
 
 if ( isset ( $SCRIPT ) ) { // this shit right here rocks.
+	echo " <!-- Automated JS Includes -->\n";
 	foreach ( $SCRIPT as $key ) {
 		echo "		<script src = '" . $SITE_PREFIX . "libs/js/" . $key . "' type = 'text/javascript'></script>\n";
 	}
+}
+
+// and let's preload too
+
+if ( isset ( $PRELOAD ) ) {
+	echo "<!-- Let's preload -->\n<script type = 'text/javascript' >\n";
+	$i = 0;
+	foreach ( $PRELOAD as $key ) {
+		echo "		pic$i= new Image(" . $key['w'] . ", " . $key['h'] . ");\n";
+		echo "		pic$i.src=\"" . $SITE_PREFIX . "imgs/" . $key['src'] . "\";\n";
+		$i++;
+	}
+	echo "</script>\n";
 }
 
 ?>

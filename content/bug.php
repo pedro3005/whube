@@ -37,6 +37,6 @@ $status   = getStatus(   $row['bug_status'] );
 $severity = getSeverity( $row['bug_severity'] );
 
 $CONTENT .= "It's classified as a " . $status['status_name'] . " bug with a severity level of ";
-$CONTENT .= $severity['severity_name'] . ". Is that wrong? Too bad.<br />";
+$CONTENT .= $severity['severity_name'] . ". Is that wrong? Too <br />";
 
 ?>
