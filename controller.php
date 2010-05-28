@@ -9,7 +9,7 @@ include( $app_root . "conf/site.php" );
 include( $app_root . "libs/php/globals.php" );
 
 $p = htmlentities( $_GET['p'] );
-$toks = breakUpLine( $p );
+$toks = explode( "/", $p );
 
 $argv = $toks;
 $argc = sizeof( $toks );
