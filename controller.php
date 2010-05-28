@@ -28,9 +28,7 @@ if (
 	header("Location: $SITE_PREFIX");
 }
 
-
 include( $app_root . "view/view.php" );
-
 
 ?>
 
