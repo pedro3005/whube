@@ -58,6 +58,7 @@ window.onload = function(){
 		$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/loading.png\" alt = \"\" />');
 		handleLoading();
 	});
+	validate();
 }
 ";
 
