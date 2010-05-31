@@ -1,11 +1,10 @@
 <?php
 
 session_start();
+// requireLogin();
 
 include( "conf/site.php" );
 include( "libs/php/globals.php" );
-requireLogin();
-
 
 $app_root = dirname(  __FILE__ ) . "/";
 include( $app_root . "model/project.php" );

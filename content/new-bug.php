@@ -3,7 +3,7 @@
 requireLogin();
 
 useScript( "jQuery.js" );
-useScript( "file-bug.php" );
+useScript( "validate-project.php" );
 
 preload( 32, 32, "no.png" );
 preload( 32, 32, "yes.png" );

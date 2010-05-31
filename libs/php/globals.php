@@ -56,6 +56,16 @@ function getStatus( $status ) {
 	}
 }
 
+function getAllStatus() {
+	$sql = new sql();
+	$sql->query("SELECT * FROM status;" );
+	$ret = array();
+	while ( $row = $sql->getNextRow() ) {
+		array_push( $ret, $row );
+	}
+	return $ret;
+}
+
 function getSeverity( $status ) {
 	if ( isset ( $status ) ) {
 		$sql = new sql();
@@ -63,6 +73,16 @@ function getSeverity( $status ) {
 		$ret = $sql->getNextRow();
 		return $ret;
 	}
+}
+
+function getAllSeverity() {
+	$sql = new sql();
+	$sql->query("SELECT * FROM severity;" );
+	$ret = array();
+	while ( $row = $sql->getNextRow() ) {
+		array_push( $ret, $row );
+	}
+	return $ret;
 }
 
 ?>

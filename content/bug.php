@@ -1,7 +1,7 @@
 <?php
 
 useScript( "jQuery.js" );
-useScript( "edit-bug.php" );
+useScript( "validate-project.php" );
 
 include( "model/bug.php" );
 include( "model/user.php" );
@@ -20,44 +20,77 @@ if ( isset ( $row['bID'] ) ) {
 	$p->getAllByPK( $row['package'] );
 	$project = $p->getNext();
 
-	$u->getAllByPK( $row['reporter'] );
-	$reporter = $u->getNext();
+	$reporter = $b->getReporter( $row['bID'] );
+	$owner    = $b->getOwner(    $row['bID'] );
+	$project  = $b->getProject(  $row['bID'] );
 
-	$u->getAllByPK( $row['owner'] );
-	$owner = $u->getNext();
+	if ( ! isset ( $owner['uID'] ) ) {
+		$owner_info = "No owner!";
+	}
 
 	$TITLE = "Bug #" . $row['bID'];
 
-	$CONTENT = "
+	$CONTENT .= "
 <h1>" . $row['title'] . "</h1>
 <div id = 'edit-bug' >
-	<form action = '<?php echo $SITE_PREFIX; ?>bug-callback.php' method = 'post' >
+	<form action = '" . $SITE_PREFIX . "bug-callback.php' method = 'post' >
 <table>
 	<tr>
 		<td>Project</td>
-		<td><input type = 'text' name = 'project' /></td>
+		<td><div id = 'project-ok' ><img src = '" . $SITE_PREFIX . "imgs/no.png' alt = '' /></div></td>
+		<td><input type = 'text' value = '" . $project['project_name'] . "' id = 'project' name = 'project' size = '20' /></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td><div id = 'project-descr' >&nbsp;</div></td>
 	</tr>
 	<tr>
 		<td>Title</td>
-		<td><input type = 'text' name = 'title' /></td>
+		<td></td>
+		<td><input value = '" . $row['title'] . "' type = 'text' name = 'title' /></td>
 	</tr>
 	<tr>
 		<td>Status</td>
 		<td></td>
+		<td><select name = 'status' >
+";
+
+$status   = getAllStatus();
+foreach ( $status as $key ) {
+	$CONTENT .= "<option value = '" . $key['statusID'] . "' >" . $key['status_name'] . "</option>\n";
+}
+
+$CONTENT .= "
+</td>
 	</tr>
 	<tr>
 		<td>Severity</td>
 		<td></td>
+		<td><select name = 'severity' >";
+
+$severity = getAllSeverity();
+foreach ( $severity as $key ) {
+	$CONTENT .= "<option value = '" . $key['severityID'] . "' >" . $key['severity_name'] . "</option>\n";
+}
+
+$CONTENT .= "</severity></td>
 	</tr>
 	<tr>
 		<td>Owner</td>
-		<td><input type = 'text' name = 'owner' /></td>
+		<td></td>
+		<td><input value = '" . $owner['username'] . "' type = 'text' name = 'owner' /></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td><input type = 'submit' value = 'Make it so' /></td>
 	</tr>
 </table>
 	</form>
 </div>
 This bug is against <b>" . $project['project_name'] . "</b><br />
-<b>" . $reporter['real_name'] . "</b>, that troublemaker, reported this bug.<br />
+<b>" . $reporter['real_name'] . " ( " . $reporter['username'] . " )</b>, that troublemaker, reported this bug.<br />
 ";
 
 	if ( isset ( $owner['uID'] ) ) {
