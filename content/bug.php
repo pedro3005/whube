@@ -1,6 +1,7 @@
 <?php
 
 useScript( "jQuery.js" );
+useScript( "validate-user.php" );
 useScript( "validate-project.php" );
 
 include( "model/bug.php" );
@@ -78,8 +79,13 @@ $CONTENT .= "</severity></td>
 	</tr>
 	<tr>
 		<td>Owner</td>
+		<td><div id = 'user-ok' ><img src = '" . $SITE_PREFIX . "imgs/no.png' alt = '' /></div></td>
+		<td><input type = 'text' value = '" . $owner['username'] . "' id = 'user' name = 'owner' size = '20' /></td>
+	</tr>
+	<tr>
 		<td></td>
-		<td><input value = '" . $owner['username'] . "' type = 'text' name = 'owner' /></td>
+		<td></td>
+		<td><div id = 'user-descr' >&nbsp;</div></td>
 	</tr>
 	<tr>
 		<td></td>

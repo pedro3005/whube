@@ -11,26 +11,26 @@ header( "Content-type: text/javascript" );
 $PROJECT_FINDER = $SITE_PREFIX . "validate-project.php";
 
 $SCRIPT= <<<EOF
-var lastPressed = new Date();
-lastPressed.setDate(0);
-fetch();
+var projectLastPressed = new Date();
+projectLastPressed.setDate(0);
+projectFetch();
 
-function handleLoading() {
-	lastPressed = new Date();
-	fetch();
+function projectHandleLoading() {
+	projectLastPressed = new Date();
+	projectFetch();
 }
 
-function fetch() {
+function projectFetch() {
 	var t = new Date();
-	if ( lastPressed.getTime() + 800 < t.getTime() ) {
-		lastPressed = new Date();
-		validate();
+	if ( projectLastPressed.getTime() + 800 < t.getTime() ) {
+		projectLastPressed = new Date();
+		projectValidate();
 	} else {
-		setTimeout( fetch, 10 );
+		setTimeout( projectFetch, 10 );
 	}
 }
 
-function validate() {
+function projectValidate() {
 	tex = $('#project').val();
 	$.getJSON("$PROJECT_FINDER?p=" + tex,function(data){
 EOF;
@@ -53,13 +53,13 @@ $SCRIPT .= "
 		}
 	});
 }
-window.onload = function(){
+$(window).load( function() {
 	$('#project').keyup(function(event) {
 		$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/loading.png\" alt = \"\" />');
-		handleLoading();
+		projectHandleLoading();
 	});
-	validate();
-}
+	projectValidate();
+});
 ";
 
 echo $SCRIPT;
