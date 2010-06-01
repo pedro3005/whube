@@ -31,6 +31,8 @@ if ( isset ( $row['bID'] ) ) {
 
 	$TITLE = "Bug #" . $row['bID'];
 
+if ( loggedIn() ) {
+
 	$CONTENT .= "
 <h1>" . $row['title'] . "</h1>
 <div id = 'edit-bug' >
@@ -105,6 +107,11 @@ $CONTENT .= "</severity></td>
 </table>
 	</form>
 </div>
+";
+
+}
+
+$CONTENT .= "
 This bug is against <b>" . $project['project_name'] . "</b><br />
 <b>" . $reporter['real_name'] . " ( " . $reporter['username'] . " )</b>, that troublemaker, reported this bug.<br />
 ";
@@ -119,7 +126,7 @@ This bug is against <b>" . $project['project_name'] . "</b><br />
 	$severity = getSeverity( $row['bug_severity'] );
 
 	$CONTENT .= "It's classified as a <b>" . $status['status_name'] . "</b> bug with a severity level of ";
-	$CONTENT .= "<b>" . $severity['severity_name'] . ".</b><br /><button id = 'edit-button' type = 'Button'>Edit</button>";
+	$CONTENT .= "<b>" . $severity['severity_name'] . "</b>\n";
 
 } else {
 	$_SESSION['err'] = "Bug #" . $argv[1] . " does not exist!";

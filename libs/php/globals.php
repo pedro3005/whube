@@ -47,6 +47,14 @@ function requireLogin() {
 	}
 }
 
+function loggedIn() {
+	if ( isset ( $_SESSION['id'] ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function getStatus( $status ) {
 	if ( isset ( $status ) ) {
 		$sql = new sql();
