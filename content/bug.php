@@ -3,6 +3,7 @@
 useScript( "jQuery.js" );            // dep   #1
 useScript( "validate-user.php" );    // needs #1
 useScript( "validate-project.php" ); // needs #1
+useScript( "edit-menu.js" );
 
 include( "model/bug.php" );
 include( "model/user.php" );
@@ -35,6 +36,8 @@ if ( loggedIn() ) {
 
 	$CONTENT .= "
 <h1>" . $row['title'] . "</h1>
+<div id = 'edit-bug-control' ><img src = '" . $SITE_PREFIX . "imgs/edit.png' alt = 'edit' /></div>
+
 <div id = 'edit-bug' >
 	<form action = '" . $SITE_PREFIX . "bug-callback.php' method = 'post' >
 		<input type = 'hidden' value = '" . $row['bID'] . "' name = 'bID' />
@@ -111,7 +114,9 @@ $CONTENT .= "</severity></td>
 	</tr>
 </table>
 	</form>
-</div>
+</div><br />
+<br />
+<br />
 ";
 
 }
