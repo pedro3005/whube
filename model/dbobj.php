@@ -46,6 +46,33 @@ class dbobj {
 		return $this->sql->getLastID();
 	}
 
+	function updateByPK( $PK, $tables ) {
+
+		$QUERY = "UPDATE " . $this->table . " SET ";
+
+		$nipflipflip = false;
+
+		foreach ( $tables as $key => $value ) {
+			if ( ! is_numeric( $value ) ) {
+				$value = "'$value'";
+			}
+
+			if ( $nipflipflip ) {
+				$QUERY .= ", ";
+			} else {
+				$nipflipflip = true;
+			}
+
+			$QUERY .= $key . " = " . $value;
+
+		}
+
+		$QUERY .= " WHERE " . $this->pk_field . " = '" . $PK . "';";
+
+		$this->sql->query( $QUERY );
+	}
+
+
 	function getAllByPK( $pk ) {
 		$this->sql->query( "SELECT * FROM " . $this->table . " WHERE " . $this->pk_field . " = '" . $pk . "'; " );
 	}

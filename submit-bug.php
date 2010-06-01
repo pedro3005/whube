@@ -1,9 +1,10 @@
 <?php
 session_start();
-requireLogin();
 
 include( "conf/site.php" );
 include( "libs/php/globals.php" );
+
+requireLogin();
 
 	if (
 isset ( $_POST['project'] ) &&

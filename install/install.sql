@@ -13,12 +13,21 @@ CREATE TABLE users (
 	PRIMARY KEY( uID )
 );
 
-
 INSERT INTO users VALUES (
 	'',
 	'Paul Tagliamonte',
 	'paultag',
 	'paultag@whube.com',
+	'EN',
+	'-0500',
+	'testing'
+);
+
+INSERT INTO users VALUES (
+	'',
+	'Travis Knee',
+	'raidsong',
+	'raidsong@whube.com',
 	'EN',
 	'-0500',
 	'testing'
@@ -31,6 +40,14 @@ CREATE TABLE user_rights (
 	doner          BOOL,
 	member         BOOL,
 	PRIMARY KEY( userID )
+);
+
+INSERT INTO user_rights VALUES (
+	'1',
+	TRUE, /* ADMIN */
+	TRUE, /* STAFF */
+	TRUE, /* DONER */
+	TRUE  /* MEMBR */
 );
 
 CREATE TABLE projects ( 
@@ -47,6 +64,14 @@ INSERT INTO projects VALUES (
 	'',
 	'whube',
 	'Whube is this project right here!',
+	1,
+	TRUE
+);
+
+INSERT INTO projects VALUES (
+	'',
+	'whube_docs',
+	'Whube Docs manages all the documentation for the Whube project, and documents anywhere!',
 	1,
 	TRUE
 );

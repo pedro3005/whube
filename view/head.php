@@ -43,6 +43,9 @@ if ( isset ( $_SESSION['msg'] ) ) {
 	unset( $_SESSION['msg'] );
 }
 		?>
+<?php
+if ( isset ( $DEBUG ) ) {
+?>
 <!--
 Debug Frame:
 
@@ -62,3 +65,7 @@ POST Status:
 ?>
 
 -->
+
+<?php
+}
+?>

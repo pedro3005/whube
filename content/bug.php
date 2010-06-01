@@ -1,8 +1,8 @@
 <?php
 
-useScript( "jQuery.js" );
-useScript( "validate-user.php" );
-useScript( "validate-project.php" );
+useScript( "jQuery.js" );            // dep   #1
+useScript( "validate-user.php" );    // needs #1
+useScript( "validate-project.php" ); // needs #1
 
 include( "model/bug.php" );
 include( "model/user.php" );
@@ -35,6 +35,8 @@ if ( isset ( $row['bID'] ) ) {
 <h1>" . $row['title'] . "</h1>
 <div id = 'edit-bug' >
 	<form action = '" . $SITE_PREFIX . "bug-callback.php' method = 'post' >
+		<input type = 'hidden' value = '" . $row['bID'] . "' name = 'bID' />
+
 <table>
 	<tr>
 		<td>Project</td>
@@ -59,7 +61,11 @@ if ( isset ( $row['bID'] ) ) {
 
 $status   = getAllStatus();
 foreach ( $status as $key ) {
-	$CONTENT .= "<option value = '" . $key['statusID'] . "' >" . $key['status_name'] . "</option>\n";
+	$hook = "";
+	if ( $key['statusID'] == $row['bug_status'] ) {
+		$hook = ' selected = "selected" ';
+	}
+	$CONTENT .= "<option value = '" . $key['statusID'] . "' $hook >" . $key['status_name'] . "</option>\n";
 }
 
 $CONTENT .= "
@@ -72,7 +78,11 @@ $CONTENT .= "
 
 $severity = getAllSeverity();
 foreach ( $severity as $key ) {
-	$CONTENT .= "<option value = '" . $key['severityID'] . "' >" . $key['severity_name'] . "</option>\n";
+	$hook = "";
+	if ( $key['severityID'] == $row['bug_severity'] ) {
+		$hook = ' selected = "selected" ';
+	}
+	$CONTENT .= "<option value = '" . $key['severityID'] . "' $hook >" . $key['severity_name'] . "</option>\n";
 }
 
 $CONTENT .= "</severity></td>
@@ -101,6 +111,8 @@ This bug is against <b>" . $project['project_name'] . "</b><br />
 
 	if ( isset ( $owner['uID'] ) ) {
 		$CONTENT .= "This bug is being hacked on by <b>" . $owner['real_name'] . "</b><br />";
+	} else {
+		$CONTENT .= "Sadly, this bug has no owner. Adopt me!</b><br />";
 	}
 
 	$status   = getStatus(   $row['bug_status'] );
