@@ -25,7 +25,7 @@ INSERT INTO users VALUES (
 
 INSERT INTO users VALUES (
 	'',
-	'Travis Knee',
+	'Foobar Baz',
 	'raidsong',
 	'raidsong@whube.com',
 	'EN',
