@@ -1,21 +1,14 @@
 <?php
-
-// useScript( "jQuery.js" );
-
 include( "model/project.php" );
-
 $p = new project();
-
-
-$p->getAllByPK( $argv[1] );
+$p->getByCol( "project_name", $argv[1] ); // this is goddamn awesome
 $row = $p->getNext();
 
 if ( isset ( $row['pID'] ) ) {
 	$TITLE = $row['project_name'] . ", one of the fantastic projects on Whube";
 	$CONTENT = "
 <h1>" . $row['project_name'] . "</h1>
-Badass. 
-
+" . $row['descr'] . "<br />
 ";
 } else {
 	$_SESSION['err'] = "Project " . $argv[1] . " does not exist!";

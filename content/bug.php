@@ -61,7 +61,7 @@ if ( loggedIn() ) {
 	<tr>
 		<td>Title</td>
 		<td></td>
-		<td><input value = '" . $row['title'] . "' type = 'text' name = 'title' /></td>
+		<td><input value = \"" . $row['title'] . "\" type = 'text' name = 'title' /></td>
 	</tr>
 	<tr>
 		<td>Status</td>
