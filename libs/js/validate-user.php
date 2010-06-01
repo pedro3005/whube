@@ -39,11 +39,13 @@ $SCRIPT .= "
 		if ( data.success ) {
 			$('#user-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/ok.png\" alt = \"\" />');
 			$('#user').removeClass(\"shit\");
+			$('#user').removeClass(\"meh\");
 			$('#user').addClass(\"ok\");
 			$('#user-descr').html( data.descr );
 		} else {
 			$('#user-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/no.png\" alt = \"\" />');
 			$('#user').removeClass(\"ok\");
+			$('#user').removeClass(\"meh\");
 			$('#user').addClass(\"shit\");
 			if ( data.bestmatch ) {
 				$('#user-descr').html( \"Did you mean: \" + data.bestmatch + \"?\" );
@@ -56,6 +58,9 @@ $SCRIPT .= "
 $(window).load( function() {
 	$('#user').keyup(function(event) {
 		$('#user-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/loading.png\" alt = \"\" />');
+		$('#user').removeClass(\"ok\");
+		$('#user').removeClass(\"shit\");
+		$('#user').addClass(\"meh\");
 		userHandleLoading();
 	});
 	userValidate();

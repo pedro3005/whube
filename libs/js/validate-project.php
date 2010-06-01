@@ -38,12 +38,14 @@ EOF;
 $SCRIPT .= "
 		if ( data.success ) {
 			$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/ok.png\" alt = \"\" />');
+			$('#project').removeClass(\"meh\");
 			$('#project').removeClass(\"shit\");
 			$('#project').addClass(\"ok\");
 			$('#project-descr').html( data.descr );
 		} else {
 			$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/no.png\" alt = \"\" />');
 			$('#project').removeClass(\"ok\");
+			$('#project').removeClass(\"meh\");
 			$('#project').addClass(\"shit\");
 			if ( data.bestmatch ) {
 				$('#project-descr').html( \"Did you mean: \" + data.bestmatch + \"?\" );
@@ -56,6 +58,9 @@ $SCRIPT .= "
 $(window).load( function() {
 	$('#project').keyup(function(event) {
 		$('#project-ok').html('<img src = \"" . $SITE_PREFIX . "imgs/loading.png\" alt = \"\" />');
+		$('#project').removeClass(\"ok\");
+		$('#project').removeClass(\"shit\");
+		$('#project').addClass(\"meh\");
 		projectHandleLoading();
 	});
 	projectValidate();
