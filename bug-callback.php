@@ -39,7 +39,7 @@ $title   = clean($_POST['title']);      /* New title of the bug ( perhaps )    *
 $status  = clean($_POST['status']);     /* New status of the bug ( perhaps )   */
 $sever   = clean($_POST['severity']);   /* New severity of the bug ( perhaps ) */
 $owner   = clean($_POST['owner']);      /* New owner of the bug ( perhaps )    */
-// $descr   = clean($_POST['descr']);      /* New descr of the bug ( perhaps )    */
+$descr   = clean($_POST['descr']);      /* New descr of the bug ( perhaps )    */
 
 $o = new user();
 $p = new project();
@@ -58,7 +58,8 @@ $posted_data = array(
 	"bug_status"   => $status,
 	"package"      => $projectID,
 	"owner"        => $ownerID,
-	"title"        => $title
+	"title"        => $title,
+	"descr"        => $descr
 );
 
 

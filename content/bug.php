@@ -100,6 +100,11 @@ $CONTENT .= "</severity></td>
 		<td><div id = 'user-descr' >&nbsp;</div></td>
 	</tr>
 	<tr>
+		<td>Description</td>
+		<td></td>
+		<td><textarea name = 'descr' rows = '10' cols = '50' >" . $row['descr'] . "</textarea></td>
+	</tr>
+	<tr>
 		<td></td>
 		<td></td>
 		<td><input type = 'submit' value = 'Make it so' /></td>
@@ -127,6 +132,8 @@ This bug is against <b>" . $project['project_name'] . "</b><br />
 
 	$CONTENT .= "It's classified as a <b>" . $status['status_name'] . "</b> bug with a severity level of ";
 	$CONTENT .= "<b>" . $severity['severity_name'] . "</b>\n";
+	$CONTENT .= "<h1>Bug Description</h1>\n";
+	$CONTENT .= "<br />\n<pre>" . $row['descr'] . "</pre>\n";
 
 } else {
 	$_SESSION['err'] = "Bug #" . $argv[1] . " does not exist!";
