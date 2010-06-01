@@ -36,7 +36,12 @@ if ( loggedIn() ) {
 
 	$CONTENT .= "
 <h1>" . $row['title'] . "</h1>
-<div id = 'edit-bug-control' ><img src = '" . $SITE_PREFIX . "imgs/edit.png' alt = 'edit' /></div>
+<div class = 'shade' >
+<table class = 'center' >
+	<tr><td><img id = 'edit-bug-control' src = '" . $SITE_PREFIX . "imgs/edit.png' alt = 'edit' /></td></tr>
+	<tr><td>Edit this bug</td></tr>
+</table>
+</div>
 
 <div id = 'edit-bug' >
 	<form action = '" . $SITE_PREFIX . "bug-callback.php' method = 'post' >

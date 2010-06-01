@@ -19,6 +19,14 @@ h1 {
 	background-color:     #DCDCDC;
 }
 
+.center {
+	text-align:           center;
+}
+
+.shade {
+	border-bottom:        1px solid #000000;
+}
+
 .shit {
 	background-color:     #E16043;
 }
