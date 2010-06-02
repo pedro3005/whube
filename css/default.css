@@ -28,6 +28,7 @@ h1 {
 	background-color:      #DCDCDC;
 	margin-top:            50px;
 	overflow:              scroll;
+	border:                4px solid #ECECEC;
 }
 
 .ok {

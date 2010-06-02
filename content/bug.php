@@ -47,7 +47,8 @@ if ( loggedIn() ) {
 	<div class = 'container' >
 		<div class = 'prompt' >
 			<div class = 'content' >
-<h1>Edit this bug:</h1>
+<img id = 'edit-close' src = '" . $SITE_PREFIX . "imgs/close.png' alt = 'Close' />
+<h1>Edit this bug: </h1>
 	<form action = '" . $SITE_PREFIX . "bug-callback.php' method = 'post' >
 		<p><input type = 'hidden' value = '" . $row['bID'] . "' name = 'bID' /></p>
 

@@ -3,4 +3,7 @@ $(window).load( function() {
 	$("#edit-bug-control").click( function() {
 		$("#edit-bug").show();
 	});
+	$("#edit-close").click( function() {
+		$("#edit-bug").hide();
+	});
 });
