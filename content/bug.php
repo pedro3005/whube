@@ -43,6 +43,11 @@ if ( loggedIn() ) {
 </div>
 
 <div id = 'edit-bug' >
+<div class = 'lookatme' >
+	<div class = 'container' >
+		<div class = 'prompt' >
+			<div class = 'content' >
+<h1>Edit this bug:</h1>
 	<form action = '" . $SITE_PREFIX . "bug-callback.php' method = 'post' >
 		<input type = 'hidden' value = '" . $row['bID'] . "' name = 'bID' />
 
@@ -118,6 +123,10 @@ $CONTENT .= "</severity></td>
 	</tr>
 </table>
 	</form>
+			</div>
+		</div>
+	</div>
+</div>
 </div><br />
 <br />
 <br />
