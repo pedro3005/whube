@@ -49,7 +49,7 @@ if ( loggedIn() ) {
 			<div class = 'content' >
 <h1>Edit this bug:</h1>
 	<form action = '" . $SITE_PREFIX . "bug-callback.php' method = 'post' >
-		<input type = 'hidden' value = '" . $row['bID'] . "' name = 'bID' />
+		<p><input type = 'hidden' value = '" . $row['bID'] . "' name = 'bID' /></p>
 
 <table>
 	<tr>
@@ -83,7 +83,7 @@ foreach ( $status as $key ) {
 }
 
 $CONTENT .= "
-</td>
+</select></td>
 	</tr>
 	<tr>
 		<td>Severity</td>
@@ -99,7 +99,7 @@ foreach ( $severity as $key ) {
 	$CONTENT .= "<option value = '" . $key['severityID'] . "' $hook >" . $key['severity_name'] . "</option>\n";
 }
 
-$CONTENT .= "</severity></td>
+$CONTENT .= "</select></td>
 	</tr>
 	<tr>
 		<td>Owner</td>
