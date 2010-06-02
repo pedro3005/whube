@@ -44,7 +44,7 @@ if ( loggedIn() ) {
 
 <div id = 'edit-bug' >
 <div class = 'lookatme' >
-	<div class = 'container' >
+	<div id = 'edit-interface' class = 'container' >
 		<div class = 'prompt' >
 			<div class = 'content' >
 <img id = 'edit-close' src = '" . $SITE_PREFIX . "imgs/close.png' alt = 'Close' />

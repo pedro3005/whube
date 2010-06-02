@@ -1,9 +1,28 @@
 $(window).load( function() {
 	$("#edit-bug").hide();
 	$("#edit-bug-control").click( function() {
-		$("#edit-bug").show();
+		$("#edit-interface").hide();
+		$("#edit-bug").animate({
+			opacity:   'show'
+		}, 400, function() {
+			// Animation complete.
+		});
+		$("#edit-interface").animate({
+			height:   'show'
+		}, 400, function() {
+			// Animation complete.
+		});
 	});
 	$("#edit-close").click( function() {
-		$("#edit-bug").hide();
+		$("#edit-interface").animate({
+			height:   'hide'
+		}, 400, function() {
+			// Animation complete.
+		});
+		$("#edit-bug").animate({
+			opacity:   'hide'
+		}, 400, function() {
+			// Animation complete.
+		});
 	});
 });
