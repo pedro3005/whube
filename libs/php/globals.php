@@ -30,8 +30,8 @@ function breakUpLine( $line ) {
 	} else {
 		$prefix  = trim(substr( $line, 0, $pos ) );
 		$postfix = trim(substr( $line, $pos + 1, strlen( $line )) );
-		$prefix  = htmlentities( $prefix );
-		$postfix = htmlentities( $postfix );
+		$prefix  = htmlentities( $prefix,  ENT_QUOTES);
+		$postfix = htmlentities( $postfix, ENT_QUOTES);
 
 		$ret = array( $prefix, $postfix );
 	}

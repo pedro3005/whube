@@ -21,9 +21,9 @@ isset ( $_POST['descr']   )
 
 		// let's first verify the project.
 
-		$pname = mysql_real_escape_string( htmlentities( $_POST['project'] ) );
-		$title = mysql_real_escape_string( htmlentities( $_POST['title'] ) );
-		$descr = mysql_real_escape_string( htmlentities( $_POST['descr'] ) );
+		$pname = htmlentities( $_POST['project'], ENT_QUOTES);
+		$title = htmlentities( $_POST['title'],   ENT_QUOTES);
+		$descr = htmlentities( $_POST['descr'],   ENT_QUOTES);
 
 		$p->getByCol( "project_name", $pname );
 

@@ -8,7 +8,7 @@ $controller      = basename( __FILE__ );
 include( $app_root . "conf/site.php" );
 include( $app_root . "libs/php/globals.php" );
 
-$p = htmlentities( $_GET['p'] );
+$p = htmlentities( $_GET['p'], ENT_QUOTES);
 $toks = explode( "/", $p );
 
 $argv = $toks;

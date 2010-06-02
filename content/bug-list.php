@@ -2,8 +2,10 @@
 
 $Count = 200;
 
-if ( isset( $argv[1] ) ) {
-	$Count = $argv[1];
+if ( isset( $argv[2] ) ) {
+	$class = htmlentities($argv[1], ENT_QUOTES);
+	$id    = htmlentities($argv[2], ENT_QUOTES);
+	// echo "Getting $id bugs filtering by $class";
 }
 
 include( "model/bug.php" );

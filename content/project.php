@@ -11,7 +11,7 @@ $row = $p->getNext();
 $b->getByCol( "package", $row['pID'] ); // this is goddamn awesome
 $booboos = $b->numrows();
 
-$critical = $b->specialSelect( "bug_status != 1" );
+$critical = 0; // doh // $b->specialSelect( "bug_status != 1" );
 
 if ( isset ( $row['pID'] ) ) {
 	$TITLE = $row['project_name'] . ", one of the fantastic projects on Whube";

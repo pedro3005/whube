@@ -12,7 +12,7 @@ include( $app_root . "model/project.php" );
 $s = new sql();
 
 function clean( $foo ) {
-	return htmlentities( mysql_real_escape_string( $foo ) );
+	return htmlentities($foo, ENT_QUOTES);
 }
 
 $d['errors'] = true;

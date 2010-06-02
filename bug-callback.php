@@ -13,7 +13,7 @@ include( "model/project.php" );
 $b = new bug();
 
 function clean( $ret ) {
-	return mysql_real_escape_string( htmlentities( $ret ) ) ;
+	return htmlentities( $ret, ENT_QUOTES);
 }
 
 /*
