@@ -64,6 +64,10 @@ class dbobj {
 		$this->sql->query( $QUERY );
 	}
 
+	function specialSelect($query ) {
+		$this->sql->query( "SELECT * FROM " . $this->table . " WHERE " . $query . ";" );
+		return $this->numrows();
+	}
 
 	function getAllByPK( $pk ) {
 		$this->sql->query( "SELECT * FROM " . $this->table . " WHERE " . $this->pk_field . " = '" . $pk . "'; " );

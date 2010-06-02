@@ -2,7 +2,6 @@
 
 requireLogin();
 
-useScript( "jQuery.js" );
 useScript( "validate-project.php" );
 
 preload( 32, 32, "no.png" );

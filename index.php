@@ -10,7 +10,7 @@ Whube v 3.141
 <a href = '" . $SITE_PREFIX . "t/login' >Go Home!</a>
 <br /><br />
 <div class = 'center' >
-<table>
+<!-- <table>
 
 	<tr>
 		<td><img src = '" . $SITE_PREFIX . "imgs/users.png' alt = '' /></td>
@@ -25,7 +25,7 @@ Whube v 3.141
 		<td>Create an account</td>
 	</tr>
 
-</table>
+</table> -->
 </div>
 ";
 

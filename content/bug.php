@@ -1,8 +1,7 @@
 <?php
 
-useScript( "jQuery.js" );            // dep   #1
-useScript( "validate-user.php" );    // needs #1
-useScript( "validate-project.php" ); // needs #1
+useScript( "validate-user.php" );
+useScript( "validate-project.php" );
 useScript( "edit-menu.js" );
 
 include( "model/bug.php" );
