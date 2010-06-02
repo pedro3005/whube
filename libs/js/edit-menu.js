@@ -4,7 +4,7 @@ $(window).load( function() {
 		$("#edit-interface").hide();
 		$("#edit-bug").animate({
 			opacity:   'show'
-		}, 400, function() {
+		}, 200, function() {
 			$("#edit-interface").animate({
 				height:   'show'
 			}, 400, function() {
@@ -15,7 +15,7 @@ $(window).load( function() {
 	$("#edit-close").click( function() {
 		$("#edit-interface").animate({
 			height:   'hide'
-		}, 400, function() {
+		}, 200, function() {
 			$("#edit-bug").animate({
 				opacity:   'hide'
 			}, 400, function() {
