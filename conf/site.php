@@ -15,6 +15,8 @@
 	// CONF THE FOLLOWING
 
 	$SITE_PREFIX   =   "http://localhost/whube/";
+  $CREATE_DB     =   1; // If database exists, change to 0.
+  $TABLE_PREFIX  =   "whube_"; // So that those on shared hosts with one db can still use it
 
 	array_push( $SCRIPT, "jQuery.js");  // dep
 	array_push( $SCRIPT, "effects.js"); // fade out messages etc.
