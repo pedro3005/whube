@@ -83,7 +83,7 @@ if ( isset ( $_SESSION['id'] ) ) {
 			</div>
 		</div>
 
-		<div class = "container" >
+		<div class = "container holder" >
 			<div class = "content" >
 		<?php 
 if ( isset( $_SESSION['err'] ) ) {

@@ -219,4 +219,6 @@ input, textarea {
 	padding:              5px;
 }
 
-
+.holder {
+	min-height:           400px;
+}
