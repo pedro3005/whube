@@ -20,6 +20,7 @@ $CONTENT .= "<h1>Last $Count bugs filed</h1>";
 
 $CONTENT .= "
 
+<div class = 'shade' >
 <table class = 'center' >
 	<tr>
 		<td><a href = '" . $SITE_PREFIX . "t/new-bug' ><img src = '" . $SITE_PREFIX . "imgs/new.png' alt = 'New' /></a></td>
@@ -29,6 +30,7 @@ $CONTENT .= "
 		<td>New Bug</td>
 	</tr>
 </table>
+</div>
 
 <br />
 <br />

@@ -1,0 +1,94 @@
+
+========================================================================
+===================       WHUBE BUG TRACKER        =====================
+========================================================================
+
+License:        GNU GPLv3 or later at option
+Author:         Paul Tagliamonte
+E-Fax:          paultag [ at ] whube  [ dot ] com
+
+
+
+========================================================================
+===================           DEDICATION           =====================
+========================================================================
+
+
+Hey there hotshot. Are you part of the GNU Generation? Do you listen
+to Black Moth Super Rainbow? The Octopus Project? Blockhead? Air?
+Have you owned a Che T-Shirt? Programmed before you could drive?
+Been outside in the last two weeks?
+
+
+Yeah? Good. Read on. No? Go play with Bugzilla and Perl. Hey! I love
+both of those things, but Whube is in no way anything formal like that.
+
+
+Still with us? Kickass. Whube is a bug tracker for us hipster nerds.
+Not real hipster, because they are lame, but cool hipster. Like trendy
+I-still-see-daylight nerd. Not to mention the first release of Whube
+sucked ass. This one is way better.
+
+Chances are you have a decent computer, and can run Javascript. Whube
+can't work without JS. For the record: NO, IT'S NOT BECAUSE I LIKE IT.
+It was the only way I could do any kind of encryption over raw HTTP. 
+Suck it up.
+
+
+So. If you need to manage some tix, and want a bit of humor in your
+management, Whube's your new toy. 
+
+     Viva la Hacking!
+         Paul Tagliamonte ( paultag )
+
+ .
+..:
+
+
+========================================================================
+===================        TECHNICAL SHIT          =====================
+========================================================================
+
+What you will need:
+  * GNU/Linux 
+     ( I'm sure you could get this to work with windows, but that's
+       just all kinds of dumb. Don't use nonfree crap.
+       PLUG: USE UBUNTU! IT WORKS GREAT! <3 UBUNTU!                 )
+
+  * Apache2
+     ( Anything that supports the .htaccess file in the root, with
+       rewrite rules.                                               )
+
+  * PHP
+     ( Well, the whole thing is written in PHP. If you ported this
+       chances are it's not Whube anymore. Ship of Theseus kinda 
+       thing. Although this is not the forum for such talk          )
+
+  * MySQL
+     ( Out of any of the things above, this is the most flexible. 
+       All you have to do is rewrite model/sql.php to work with 
+       whatever SQL server you fancy. Rewrite dbobj if you don't
+       want SQL. Although that, is kinda dumb.                      )
+
+  * Some projects
+     ( Can't have a bug tracker against no project. Dingus.         )
+
+========================================================================
+===================             SETUP              =====================
+========================================================================
+#
+# Setup should be easy enough. Feel free to copy paste, although
+# if you can't figure this out, chances are you should not be doing it
+#  :)
+#
+#   -- Paul
+#
+# Run the install/install.sql script against your MySQL server. 
+cd install
+mysql -u root -p < ./install.sql # this runs as MySQL user 'root'.
+# configure the site
+cd ../conf/
+# Be sure to edit all the options to taste! SITE_PREFIX IS CRITICAL!
+vim site.php
+# All set :) Give it a test!
+
