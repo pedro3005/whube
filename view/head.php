@@ -56,7 +56,7 @@ if ( isset ( $TWEETER ) && $TWEETER ) {
 if ( isset ( $GUILT_ME ) && $GUILT_ME ) {
 ?>
 
-		<div class = "badge" ><a href = "http://whube.com/donate" ><img src = "<?php echo $SITE_PREFIX; ?>imgs/badge.png" alt = "Join the Cause!" /></a></div>
+		<div class = "badge" ><a href = "http://donate.whube.com/" ><img src = "<?php echo $SITE_PREFIX; ?>imgs/badge.png" alt = "Join the Cause!" /></a></div>
 <?php
 }
 ?>
