@@ -50,7 +50,22 @@ if ( isset ( $PRELOAD ) ) {
 		</div>
 		<div class = "badge" ><a href = "http://whube.com/donate" ><img src = "<?php echo $SITE_PREFIX; ?>imgs/badge.png" alt = "Join the Cause!" /></a></div>
 		<div class = "nav" >
-<!-- foo -->
+<a href = "<?php echo $SITE_PREFIX; ?>t/home" >Home</a> | 
+<a href = "<?php echo $SITE_PREFIX; ?>t/bug-list" >Bug List</a> | 
+<?php
+if ( isset ( $_SESSION['id'] ) ) {
+?>
+	<a href = "<?php echo $SITE_PREFIX; ?>t/new-bug" >New Bug</a> | 
+	<a href = "<?php echo $SITE_PREFIX; ?>t/logout" >Logout</a>
+<?php
+} else {
+?>
+	<a href = "<?php echo $SITE_PREFIX; ?>t/login" >Login</a>
+<?php
+}
+?>
+
+<!-- <a href = "<?php echo $SITE_PREFIX; ?>t/" ></a> |  -->
 		</div>
 		<div class = "splash" >
 			<div class = "eyecandy" >
