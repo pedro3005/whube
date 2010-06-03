@@ -19,23 +19,6 @@ $i = 0;
 $CONTENT .= "<h1>Last $Count bugs filed</h1>";
 
 $CONTENT .= "
-
-<div class = 'shade' >
-<table class = 'center' >
-	<tr>
-		<td><a href = '" . $SITE_PREFIX . "t/new-bug' ><img src = '" . $SITE_PREFIX . "imgs/new.png' alt = 'New' /></a></td>
-	</tr>
-
-	<tr>
-		<td>New Bug</td>
-	</tr>
-</table>
-</div>
-
-<br />
-<br />
-<br />
-
 <table>
 	<tr><th>ID</th><th>Title</th></tr>
 ";
