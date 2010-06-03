@@ -1,4 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<?php
+
+$view_root        = dirname(  __FILE__ ) . "/";
+
+include( $view_root . "../model/twitter.php" );
+$twit = new twitter();
+$notices = $twit->showUpdates();
+
+
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
@@ -30,6 +39,24 @@ if ( isset ( $PRELOAD ) ) {
 ?>
 	</head>
 	<body>
+		<div class = "tweet-tweet" ><!-- I do love my tweeter -->
+			<div class = "tweet-text" >
+				<div class = "shim" >
+<?php
+	echo ltrim( $notices[0]['descr'], $notices[0]['owner'] . ":" ); // hackasauris rex
+?>
+				</div>
+			</div>
+		</div>
+		<div class = "badge" ><a href = "http://whube.com/donate" ><img src = "<?php echo $SITE_PREFIX; ?>imgs/badge.png" alt = "Join the Cause!" /></a></div>
+		<div class = "nav" >
+<!-- foo -->
+		</div>
+		<div class = "splash" >
+			<div class = "eyecandy" >
+			</div>
+		</div>
+
 		<div class = "container" >
 			<div class = "content" >
 		<?php 

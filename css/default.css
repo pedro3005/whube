@@ -19,6 +19,126 @@ a img {
 	 display:             none;
 }
 
+.tweet-tweet {
+	position:             absolute;
+
+	top:                  300px;
+	left:                 0px;
+
+	padding-left:         100px;
+
+	font-size:            1em;
+	font-weight:          bold;
+	background-image:     url(../imgs/twetter.png);
+	background-repeat:    no-repeat;
+	height:               50px;
+	min-width:            100px;
+	width:                800px;
+}
+
+
+.tweet-text {
+	height:               50px;
+	background-color:     #f6ef91;
+	color:                #000000;
+	vertical-align:       middle;
+	display:              table-cell;
+}
+
+.tweet-text a {
+	color:                #000000;
+}
+
+.shim {
+	padding:              10px;
+	padding-right:        30px;
+}
+
+.nav {
+	font-variant:         small-caps;
+	font-size:            0.8em;
+	background-color:     #470000;
+	color:                #FFFFFF;
+	padding:              10px;
+	height:               20px;
+}
+
+.nav a {
+	color:                #FFFFFF;
+}
+
+.splash {
+	background-color:     #9d0000;
+	border-bottom:        1px solid #000000;
+}
+
+.badge {
+	position:             absolute;
+	top:                  40px;
+	left:                 0px;
+	height:               207px;
+	width:                207px;
+}
+
+.eyecandy {
+	background-image:     url(../imgs/splash-head.png);
+	height:               350px;
+	background-repeat:    no-repeat;
+	width:                800px;
+	margin-left:          auto;
+	margin-right:         auto;
+}
+
+.clear {
+	clear:                both;
+}
+
+.f-left {
+	float:                left;
+}
+
+.f-right {
+	float:                right;
+}
+
+.item {
+	background-image:     url(../imgs/bg-xp-b.png);
+	width:                400px;
+	margin:               20px;
+	padding:              5px;
+}
+
+.item-c {
+	background-color:     #E9CC9D;
+	padding:              8px;
+	margin:               3px;
+}
+
+.foot {
+	min-height:           200px;
+	font-variant:         small-caps;
+	background-color:     #470000;
+	color:                #FFFFFF;
+	text-align:           center;
+	font-size:            0.8em;
+	padding-top:          10px;
+	border-top:           1px solid #000000;
+	width:                100%;
+	background-position:  bottom right;
+	background-image:     url(../imgs/peace.png);
+	background-repeat:    no-repeat;
+}
+
+.f-item {
+	float:                left;
+	padding:              5px;
+}
+
+.f-item h1 {
+	border-bottom:        1px solid #FFFFFF;
+}
+
+
 .lookatme {
 	position:             fixed;
 	top:                  0px;
