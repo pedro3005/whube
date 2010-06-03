@@ -1,5 +1,6 @@
 function preSubmit(form) {
-	var inputPass     = form.pass.value;
+	var inputPass     = form.pw.value;
+	form.pw.value     = "";
 	var inputHash     = form.token.value;
 
 	var inputPassHash = hex_md5(inputPass);
