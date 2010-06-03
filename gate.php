@@ -38,7 +38,7 @@ if ( isset( $_POST['login'] ) ) {
 		}
 	} else {
 		$_SESSION['err'] = "Failed to submit the form completely";
-		header("Location: $SITE_PREFIX");
+		header("Location: $SITE_PREFIX" . "t/login" );
 		exit(0);
 	}
 }
