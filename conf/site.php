@@ -9,6 +9,9 @@
 
 	$PAGE_MAX_COUNT = 200;
 
+	$GUILT_ME = true; // The donate banner.
+	$TWEETER  = true; // Twitter stuff. check conf/twitter.php
+
 	// CONF THE FOLLOWING
 
 	$SITE_PREFIX   =   "http://localhost/whube/";

@@ -39,6 +39,9 @@ if ( isset ( $PRELOAD ) ) {
 ?>
 	</head>
 	<body>
+<?php
+if ( isset ( $TWEETER ) && $TWEETER ) {
+?>
 		<div class = "tweet-tweet" ><!-- I do love my tweeter -->
 			<div class = "tweet-text" >
 				<div class = "shim" >
@@ -48,7 +51,15 @@ if ( isset ( $PRELOAD ) ) {
 				</div>
 			</div>
 		</div>
+<?php
+}
+if ( isset ( $GUILT_ME ) && $GUILT_ME ) {
+?>
+
 		<div class = "badge" ><a href = "http://whube.com/donate" ><img src = "<?php echo $SITE_PREFIX; ?>imgs/badge.png" alt = "Join the Cause!" /></a></div>
+<?php
+}
+?>
 		<div class = "nav" >
 <a href = "<?php echo $SITE_PREFIX; ?>t/home" >Home</a> | 
 <a href = "<?php echo $SITE_PREFIX; ?>t/bug-list" >Bug List</a> | 
