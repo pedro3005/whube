@@ -1,3 +1,33 @@
 \chapter {MVC Basics of Whube}
 This chapter will cover the basics of the whube MVC
-basics.
+basics. This will outline how Whube works under the hood.
+So, let's start off slow, and take a look at a simple incoming
+request.
+\section {Simple Request}
+So. Let's deal with the incoming request \texttt{http://whube.com/t/foo}.
+This request is sent to the server \texttt{whube.com} over the \texttt{http}
+protocol. CS 101, I know. Let's now look at the part handled by the Whube
+application. The request to the Whube webapp is \texttt{/t/foo}. This is handled
+by the .htaccess file in the project directory. The rule reads:
+\begin{verbatim}
+    RewriteRule ^t/(.*+)      controller.php?p=$1   [NC]
+\end{verbatim}
+This means that any requests that start with \texttt{/t/} will be passed to controller.php
+with everything after the last slash as the GET['p'] argumnt. \\
+\\
+The \texttt{/t/foo} request is just an alias for \texttt{controller.php?p=foo}
+\\
+the \texttt{controller.php?p=foo} script then goes on to do a few things. The \texttt{controller.php}
+script includes the \texttt{conf/site.php} and \texttt{libs/php/globals.php} files for use by the 
+content script. \texttt{controller.php} then searches the \texttt{content/} directory for a content
+script that matches the request \texttt{foo}. \texttt{controller.php} resolves this to \texttt{content/foo.php}.
+If this script does not exist, it will default to \texttt{/t/default}.
+\\
+\\
+If \texttt{content/foo.php} exists, it will be included by \texttt{controller.php}.
+This script defines two varables. \texttt{\$CONTENT} and \texttt{\$TITLE}.
+\texttt{\$CONTENT} is the "meat" of the page, and \texttt{\$TITLE} is the HTML
+page title ( \texttt{<title>} ).
+After the controller includes the content script, in invokes \texttt{view/view.php}.
+This will take all the varables that the \texttt{content/foo.php} script sets up, and
+echos them to the screen in a pre-created HTML template.
