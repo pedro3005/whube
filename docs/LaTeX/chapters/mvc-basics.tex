@@ -31,3 +31,15 @@ page title ( \texttt{<title>} ).
 After the controller includes the content script, in invokes \texttt{view/view.php}.
 This will take all the varables that the \texttt{content/foo.php} script sets up, and
 echos them to the screen in a pre-created HTML template.
+\\
+\\
+\section{Hello, World!}
+Let's take a look at the most simple content script. It's also pretty cool.
+\begin{verbatim}
+<?php
+    $TITLE   = "Hello, World!"; // title of the page
+    $CONTENT = "Hello, World!"; // content on the page
+?>
+\end{verbatim}
+Well, if you don't understand this, you might want to go back and review PHP. This
+is a very straight forward example, and it only goes downhill from here!

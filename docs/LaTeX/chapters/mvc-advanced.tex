@@ -1,0 +1,52 @@
+\chapter{Digging in deeper to Whube}
+In this chapter we will discuss more advanced features of the Whube platform.
+\section{\$SITE\_PREFIX}
+asd
+\section{Kicking ass with \$argv}
+Let's take a look at a new request. \texttt{http://whube.com/t/foo/bar/baz}.
+Breaking this back up, the request turns into \texttt{controller.php?p=foo/bar/baz}.
+If you missed this, go back and review the MVC Basics. \texttt{controller.php} will
+strip out the first item ( \texttt{foo} ) to detect the content script. \texttt{content.php}
+will take the rest of the URL past a forward slash and put it into an argument list.
+\texttt{content.php} sets up \$argv and \$argc just like this:
+\begin{verbatim}
+
+    // handling request http://whube.com/t/foo/bar/baz
+
+    $argv = array(   // it's not actually done this way
+        'bar',       // but it makes things really clear
+        'baz'        // compared to the push back system
+    );               // it uses.
+
+    $argc = sizeof( $argv ); // this is actually how it's done.
+
+\end{verbatim}
+A simple script using this would look something like:
+\begin{verbatim}
+<?php
+    $TITLE   = 'Argument Listing';
+    $CONTENT = "<h1>Arguments passed in:</h1>\n";
+
+    foreach( $argv as $arg ) {
+        $CONTENT .= $arg . "<br />\n";
+    }
+
+?>
+\end{verbatim}
+If the foreach loop is new to you, you are missing out! It's really
+handy if you want to avoid cookiecutter code like a normal for loop.
+\section{Pimping out with useScript()}
+\texttt{useScript()} is a pretty kickass function of the whube codebase.
+It does lots of really fun things when you wish to manage what scripts should be included.
+When you call \texttt{useScript("jQuery.js");} it does some nifty stuff under the hood.
+It pushes the identifer back in an array \texttt{\$SCRIPT}. When the \texttt{view/view.php}
+script is called, the \texttt{view/head.php} script should go through the \texttt{\$SCRIPT}
+array and echo out the full path to the script with the correct base.\\
+\\
+\\
+\texttt{useScript("jQuery.js");} \\ will produce output that looks a bit like \\
+\\
+\texttt{<script src = 'http://whube.com/libs/js/jQuery.js' type = 'text/javascript'></script>}
+The bit \texttt{http://whube.com/} will of course, be replaced with \texttt{\$SITE\_PREFIX}.
+This also allows for the \texttt{useScript()} to rewrite URLs on the fly, and handle conditionals
+outside of the view ( content ) code.
