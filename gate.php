@@ -17,22 +17,28 @@ if ( isset( $_POST['login'] ) ) {
 		isset( $_POST['name'] ) && $_POST['name'] != "" &&
 		isset( $_POST['pass'] ) && $_POST['pass'] != ""
 	) {
+
+		$_SESSION['key'] = $_SESSION['token'];
+		unset( $_SESSION['token'] );
+
 		$user = new user();
 		$user->getByCol( "username", $_POST['name'] );
 		$foo = $user->getNext();
 
-		if ( $_POST['pass'] == $foo['password'] ) {
+		$p_check = md5( $_SESSION['key'] . $foo['password'] );
+
+		if ( $_POST['pass'] == $p_check ) {
 
 			$_SESSION['id']         =   $foo['uID'];
 			$_SESSION['real_name']  =   $foo['real_name'];
+			$_SESSION['username']   =   $foo['username'];
 			$_SESSION['email']      =   $foo['email'];
-			$_SESSION['lang']       =   $foo['lang'];
 
 			$_SESSION['msg'] = "Well done! Welcome in!";
 			header("Location: " . $SITE_PREFIX . "t/home");
 			exit(0);
 		} else {
-			$_SESSION['err'] = "Login Failure";
+			$_SESSION['err'] = "Login Failure " . $p_check . ", " . $_POST['pass'];
 			header("Location: " . $SITE_PREFIX . "t/login");
 			exit(0);
 		}

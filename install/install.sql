@@ -20,17 +20,7 @@ INSERT INTO users VALUES (
 	'paultag@whube.com',
 	'EN',
 	'-0500',
-	'testing'
-);
-
-INSERT INTO users VALUES (
-	'',
-	'Foobar Baz',
-	'raidsong',
-	'raidsong@whube.com',
-	'EN',
-	'-0500',
-	'testing'
+	'ae2b1fca515949e5d54fb22b8ed95575'
 );
 
 CREATE TABLE user_rights ( 
