@@ -11,6 +11,14 @@ h1 {
 	font-variant:         small-caps;
 }
 
+a img {
+	border:               0px solid #000000;
+}
+
+#edit-bug {
+	 display:             none;
+}
+
 .lookatme {
 	position:             fixed;
 	top:                  0px;
@@ -22,7 +30,7 @@ h1 {
 
 .prompt {
 	width:                 800px;
-	height:                350px;
+	height:                500px;
 	margin-left:           auto;
 	margin-right:          auto;
 	background-color:      #DCDCDC;

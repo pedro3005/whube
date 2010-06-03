@@ -76,12 +76,12 @@ $row = $b->getNext();
    ** NOTE: IGNORE THE [n] ETC! THEY ARE STUPID IF YOU DON'T QUERY FUR THEM **
 
 Array (
-	[bID] => 1                        <-- PK, bug ID
-	[bug_status] => 1                 <-- FK, status table by ID
-	[bug_severity] => 1               <-- FK, severity table by ID
-	[package] => 1                    <-- FK, project table by pID
-	[reporter] => 1                   <-- FK, user table by uID
-	[owner] => 0                      <-- FK, user table by uID
+	[bID] =>              1                        <-- PK, bug ID
+	[bug_status] => 1                              <-- FK, status table by ID
+	[bug_severity] => 1                            <-- FK, severity table by ID
+	[package] => 1                                 <-- FK, project table by pID
+	[reporter] => 1                                <-- FK, user table by uID
+	[owner] => 0                                   <-- FK, user table by uID
 	[title] => Whube is not done yet               <-- Title
 	[descr] => Whube is not done yet, of course!   <-- Description
 )

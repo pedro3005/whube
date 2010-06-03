@@ -1,6 +1,8 @@
 $(window).load( function() {
 	$("#edit-bug").hide();
 	$("#edit-bug-control").click( function() {
+		var height = ( $(window).height() - 100 );
+		$(".prompt").height( height );
 		$("#edit-interface").hide();
 		$("#edit-bug").animate({
 			opacity:   'show'

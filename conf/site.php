@@ -7,6 +7,8 @@
 	$SCRIPT   = array();
 	$PRELOAD  = array();
 
+	$PAGE_MAX_COUNT = 200;
+
 	// CONF THE FOLLOWING
 
 	$SITE_PREFIX   =   "http://localhost/whube/";
