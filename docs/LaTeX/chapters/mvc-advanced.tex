@@ -1,7 +1,11 @@
 \chapter{Digging in deeper to Whube}
 In this chapter we will discuss more advanced features of the Whube platform.
 \section{\$SITE\_PREFIX}
-asd
+This is the full URL Path ( INCLUDING \texttt{http://} ) to the server and ending with
+a trailing slash ( IMPORTANT! ). ALWAYS use this when refering to another whube project file.
+If you fail to do this, it WILL fail. When you don't know the absolute path ( how many arguments
+were passed into the script ) you don't know how many times to call \texttt{../}!! Failing to use \$SITE\_PREFIX
+will cause your code to be rejected without review.
 \section{Kicking ass with \$argv}
 Let's take a look at a new request. \texttt{http://whube.com/t/foo/bar/baz}.
 Breaking this back up, the request turns into \texttt{controller.php?p=foo/bar/baz}.
