@@ -11,6 +11,15 @@ h1 {
 	font-variant:         small-caps;
 }
 
+th {
+	border-bottom:        1px solid #000000;
+	padding:              5px;
+}
+
+td {
+	padding:              5px;
+}
+
 a img {
 	border:               0px solid #000000;
 }

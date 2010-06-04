@@ -9,8 +9,13 @@ if ( isset( $argv[2] ) ) {
 }
 
 include( "model/bug.php" );
+include( "model/user.php" );
+
 $b = new bug();
 $b->getAll();
+
+$u = new user();
+
 
 $TITLE = "Latest $Count bugs";
 
@@ -20,12 +25,16 @@ $CONTENT .= "<h1>Last $Count bugs filed</h1>";
 
 $CONTENT .= "
 <table>
-	<tr><th>ID</th><th>Title</th></tr>
+	<tr><th>ID</th><th>Owner</th><th>Title</th></tr>
 ";
 
 while ( $row = $b->getNext() ) {
+
+	$u->getAllByPK( $row['owner'] );
+	$owner = $u->getNext();
+
 	if ( $i < $Count ) {
-		$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td><a href = '" . $SITE_PREFIX . "t/bug/" . $row['bID'] . "' >" . $row['title'] . "</a></td>\n\t</tr>\n";
+		$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>" . $owner['real_name'] . "</td><td><a href = '" . $SITE_PREFIX . "t/bug/" . $row['bID'] . "' >" . $row['title'] . "</a></td>\n\t</tr>\n";
 	} else {
 		break;
 	}
