@@ -54,3 +54,77 @@ array and echo out the full path to the script with the correct base.\\
 The bit \texttt{http://whube.com/} will of course, be replaced with \texttt{\$SITE\_PREFIX}.
 This also allows for the \texttt{useScript()} to rewrite URLs on the fly, and handle conditionals
 outside of the view ( content ) code.
+\section{Using the models}
+The core of what makes Whube easy to use is the \texttt{dbobj} superclass, and all the
+models that inherit from that. \texttt{dbobj} provides a unified object interface to the
+Whube backend. It provides a lot of methods that take pre-templated SQL querys and generlizes them.
+Let's take a look at a basic listing example for all bugs, and also querys projects and users.
+\begin{verbatim}
+
+<?php
+    $Count = 20; // How many bugs we want on the page
+
+    include( "model/bug.php" );       // Home of the bug klass
+    include( "model/user.php" );      // Home of the user klass
+    include( "model/project.php" );   // Home of the project klass
+
+    $b = new bug(); // instantiate bug klass
+    $b->getAll();   // same as a SELECT * FROM bugs;
+
+    $u = new user();     // instantiate user klass
+    $p = new project();  // instantiate project klass
+
+    $TITLE = "Latest $Count bugs"; // descriptive title
+
+    $i = 0; // Oldschool C99 style.
+
+    $CONTENT .= "
+<table>
+    <tr>
+        <th>ID</th> <th>Owner</th> <th>Project</th> <th>Title</th>
+    </tr>
+"; // Basic HTML code to start off the loop.
+
+    while ( $row = $b->getNext() ) { // while we have bugs to go thru
+
+        $u->getAllByPK( $row['owner'] );
+        // ^ same as: SELECT * FROM users WHERE uID = '$OWNER';
+
+        /*
+         * You can see how easy it is to forget a col name here
+         * or a table name there. Not if you use the models. Not
+         * to mention you won't have to rewrite every Query if
+         * you need to move a table or something.
+         *
+         */
+
+        $owner = $u->getNext();
+        // Get the first row ( should only be one ) 
+
+        $p->getAllByPK( $row['package'] );
+        // ^ same as: SELECT * FROM projects WHERE pID = '$PACKAGE';
+        $package = $p->getNext(); // should only be one :)
+
+        if ( $i < $Count ) { // check to see if we need another bug
+            $CONTENT .= "\t<tr>\n<td>" . $row['bID'] // This is just
+                . "</td><td>"                        // Display code.
+                    . $owner['real_name']            // just outputs
+                . "</td><td>"                        // a single line
+                    . $package['project_name']       // of the table
+                . "</td><td><a href = '"
+                    . $SITE_PREFIX . "t/bug/" . $row['bID']
+                . "' >" . $row['title']
+                . "</a></td>\n\t</tr>\n";
+        } else {
+            break; // leave the while loop if we are > $Count
+        }
+        $i++;
+    }
+
+    $CONTENT .= "
+</table><br /><br />
+"; // end the basic HTML stuff
+
+?>
+\end{verbatim}
+You can see how it's easy to search for an object by it's internal ID.
