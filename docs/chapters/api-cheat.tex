@@ -1,0 +1,126 @@
+\chapter{API Cheat Sheet}
+This chapter is full of how some of the internal
+stuff works. Refer to this often.
+\section{dbobj - the Database Object}
+\begin{verbatim}
+class dbobj {
+    function dbobj( $table, $pk_field );
+    /*
+     * dbobj ( constructor ) sets up
+     *   the table and pk to query against
+     */
+    function getAll();
+    /*
+     * preforms a `SELECT * ` against the
+     *    table set up in the constructor
+     */
+    function createNew( $items );
+    /*
+     * preforms an `INSERT`. The argument taken
+     *     is an array. The array should look as follows:
+     *
+     * array(
+     *     "package"  => $projectID,
+     *     "reporter" => $userID,
+     *     "title"    => $title,
+     *     "descr"    => $descr
+     * );
+     *
+     * That would create a new record on the top table
+     * with the array data in each of it's fields.
+     */
+    function updateByPK( $PK, $tables );
+    /*
+     * preforms an `UPDATE` on the table the object
+     *    uses. Array should look like an insert.
+     *    $PK should be the PK of the row you want to update.
+     */
+    function getAllByPK( $pk );
+    /*
+     * this does a `SELECT *` WHERE the primary key
+     *    = the $pk given. Very useful.
+     */
+    function getByCol( $cID, $id );
+    /*
+     * does a select on the column you want
+     *    with the value you want. super useful
+     *    for fetching similar things.
+     */
+    function numRows();
+    /*
+     * Number of rows returned on the last
+     *    query set.
+     */
+    function getNext();
+    /*
+     * Get the next row of the last query
+     *    sent out on this instance
+     */
+}
+\end{verbatim}
+\section{conf/site.php}
+\begin{verbatim}
+    $CONTENT            // Default site content
+    $TITLE              // Default site title
+    $SCRIPT             // Default array of JavaScript to include
+    $PRELOAD            // Default images to pre-load
+    $PAGE_MAX_COUNT     // Max items on a page. 
+    $GUILT_ME           // Put the donate wrapper on the top
+    $TWEETER            // put the twitter banner on the top bit
+    $SITE_PREFIX        // the full path to the install ( from outside ) 
+\end{verbatim}
+\section{libs/php/core.php}
+\begin{verbatim}
+    $VERSION              // Whube Version String ( 3.141 as of Jun 4th )
+    $VERSION_STRING       // a cute "v" prepended to the $VERSION string.
+                          //   might also include codenames.
+    $WHUBE_PROJECT_LEAD   // The Full Name of the Whube project Leader
+    $WHUBE_PROJECT_URL    // The full URL to the Canonical Whube site.
+    $ABOUT_WHUBE          // Brief about message from the Whube Project Leader
+\end{verbatim}
+\section{libs/php/globals.php}
+\begin{verbatim}
+    function useScript( $id );
+    /*
+     * Pushes back the script to be included
+     *    by the view code.
+     */
+    function preload( $l, $w, $src );
+    /*
+     * Preload an image to be included
+     *    by the view code
+     */
+    function breakUpLine( $line );
+    /*
+     * Parse apart a line by slash
+     */
+    function requireLogin();
+    /*
+     * Bounce a user if they are not logged in
+     *    this will bounce to /t/login
+     */
+    function loggedIn();
+    /*
+     * Check if the user is currently logged into
+     *    whube.
+     */
+    function getStatus( $status );
+    /*
+     * Get the name of the status by the status ID
+     */
+    function getAllStatus();
+    /*
+     * Get all of the statuses that are in the Whube backend
+     *    full select, all cols
+     */
+    function getSeverity( $status );
+    /*
+     * Get the name of the severity by the severity ID
+     */
+    function getAllSeverity();
+    /*
+     * Get all of the severities that are in the Whube backend
+     *    full select, all cols
+     */
+\end{verbatim}
+
