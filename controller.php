@@ -7,6 +7,9 @@ $controller      = basename( __FILE__ );
 
 include( $app_root . "conf/site.php" );
 include( $app_root . "libs/php/globals.php" );
+include( $app_root . "libs/php/easter.php" );
+
+header( "Wisdom-Turd: " . getQuip() );
 
 $p = htmlentities( $_GET['p'], ENT_QUOTES);
 $toks = explode( "/", $p );
