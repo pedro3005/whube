@@ -57,16 +57,18 @@ function loggedIn() {
 
 function getStatus( $status ) {
 	if ( isset ( $status ) ) {
+    global $TABLE_PREFIX;
 		$sql = new sql();
-		$sql->query("SELECT * FROM status WHERE statusID = " . $status );
+		$sql->query("SELECT * FROM " . $TABLE_PREFIX . "status WHERE statusID = " . $status );
 		$ret = $sql->getNextRow();
 		return $ret;
 	}
 }
 
 function getAllStatus() {
+  global $TABLE_PREFIX;
 	$sql = new sql();
-	$sql->query("SELECT * FROM status;" );
+	$sql->query("SELECT * FROM " . $TABLE_PREFIX . "status;" );
 	$ret = array();
 	while ( $row = $sql->getNextRow() ) {
 		array_push( $ret, $row );
@@ -76,16 +78,18 @@ function getAllStatus() {
 
 function getSeverity( $status ) {
 	if ( isset ( $status ) ) {
+  global $TABLE_PREFIX;
 		$sql = new sql();
-		$sql->query("SELECT * FROM severity WHERE severityID = " . $status );
+		$sql->query("SELECT * FROM " . $TABLE_PREFIX . "severity WHERE severityID = " . $status );
 		$ret = $sql->getNextRow();
 		return $ret;
 	}
 }
 
 function getAllSeverity() {
+  global $TABLE_PREFIX;
 	$sql = new sql();
-	$sql->query("SELECT * FROM severity;" );
+	$sql->query("SELECT * FROM " . $TABLE_PREFIX . "severity;" );
 	$ret = array();
 	while ( $row = $sql->getNextRow() ) {
 		array_push( $ret, $row );

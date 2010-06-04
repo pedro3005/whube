@@ -18,7 +18,7 @@ include ( $model_root . "project.php" );
 
 class bug extends dbobj {
 	function bug() {
-		dbobj::dbobj("bugs", "bID");
+    dbobj::dbobj("bugs", "bID");
 	}
 	// Let's add in some functionallity for user stuff.
 	function getOwner( $bID ) {

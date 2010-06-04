@@ -7,11 +7,14 @@
      */
 if ( ! class_exists ( "dbobj" ) ) {
 
+$model_root = dirname(  __FILE__ ) . "/";
+  
 if ( ! class_exists( "sql" ) ) {
 	// last ditch...
-	$model_root = dirname(  __FILE__ ) . "/";
 	include( $model_root . "sql.php" );
 }
+
+include( $model_root . "../conf/sql.php" );
 
 class dbobj {
 	var $sql;
@@ -19,7 +22,8 @@ class dbobj {
 	var $pk_field;
 
 	function dbobj( $table, $pk_field ) {
-		$this->table     = $table;
+    global $TABLE_PREFIX;
+		$this->table     = $TABLE_PREFIX.$table;
 		$this->pk_field  = $pk_field;
 		$this->sql       = new sql();
 	}

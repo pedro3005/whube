@@ -15,7 +15,7 @@ if ( ! class_exists( "dbobj" ) ) {
 
 class project extends dbobj {
 	function project() {
-		dbobj::dbobj("projects", "pID");
+    dbobj::dbobj("projects", "pID");
 	}
 }
 }
