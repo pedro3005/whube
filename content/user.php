@@ -22,7 +22,7 @@ if ( isset ( $user["username"] ) ) {
   
   $i=0;
   while( $row = $p->getNext() ) {
-    $projectList .= "<li>" . $row["project_name"] . "</li>";
+    $projectList .= "<li><a href='../project/" . $row['project_name'] . "'>" . $row['project_name'] . "</a></li>";
     $i++;
   }
   
