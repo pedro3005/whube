@@ -87,12 +87,10 @@ if ( isset ( $_SESSION['id'] ) ) {
 			<div class = "content" >
 		<?php 
 if ( isset( $_SESSION['err'] ) ) {
-	echo "<div class = 'error growl' >" . $_SESSION['err'] . "</div>";
+	echo "<div class = 'message growl' ><div class = 'growl-shit' ></div><div class = 'growl-content' >" . $_SESSION['err'] . "</div></div>";
 	unset( $_SESSION['err'] );
-}
-
-if ( isset ( $_SESSION['msg'] ) ) { 
-	echo "<div class = 'message growl' >" . $_SESSION['msg'] . "</div>";
+} else if ( isset ( $_SESSION['msg'] ) ) { 
+	echo "<div class = 'message growl' ><div class = 'growl-ok' ></div><div class = 'growl-content' >" . $_SESSION['msg'] . "</div></div>";
 	unset( $_SESSION['msg'] );
 }
 		?>

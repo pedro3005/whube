@@ -189,23 +189,52 @@ a img {
 }
 
 .message {
-	background-color:     #136085;
+	position:             fixed;
+	bottom:               0px;
+	right:                0px;
+
+	width:                300px;
+	height:               70px;
+
+	border:               1px solid #523921;
+
+	background-color:     #FFFFB6;
 	color:                #000000;
+	font-size:            0.80em;
+
 	-moz-border-radius:   10px;
 	-webkit-border-radius:10px;
-	font-size:            1.2em;
-	padding:              20px;
-	margin:               20px;
+
+	margin:               5px;
+}
+
+.growl-content {
+	padding:              5px;
+	padding-left:         60px;
+}
+
+.growl-ok {
+	float:                left;
+	-moz-border-radius-bottomleft:     10px;
+	-moz-border-radius-topleft:        10px;
+
+	width:                50px;
+	height:               100%;
+	background-color:     #5497D5;
+}
+
+.growl-shit {
+	float:                left;
+	-moz-border-radius-bottomleft:     10px;
+	-moz-border-radius-topleft:        10px;
+
+	width:                50px;
+	height:               100%;
+	background-color:     #cc0000;
 }
 
 .error {
 	background-color:     #c12300;
-	color:                #000000;
-	-moz-border-radius:   10px;
-	-webkit-border-radius:10px;
-	font-size:            1.2em;
-	padding:              20px;
-	margin:               20px;
 }
 
 .editme {

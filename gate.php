@@ -38,7 +38,7 @@ if ( isset( $_POST['login'] ) ) {
 			header("Location: " . $SITE_PREFIX . "t/home");
 			exit(0);
 		} else {
-			$_SESSION['err'] = "Login Failure " . $p_check . ", " . $_POST['pass'];
+			$_SESSION['err'] = "Login Failure. Check username and password.";
 			header("Location: " . $SITE_PREFIX . "t/login");
 			exit(0);
 		}

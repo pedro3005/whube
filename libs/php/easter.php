@@ -9,7 +9,7 @@
 
 	function getQuip() {
 		global $QUIP_LIST;
-		$id = rand(0,sizeof($QUIP_LIST));
+		$id = rand(0,sizeof($QUIP_LIST) - 1);
 		return $QUIP_LIST[$id];
 	}
 ?>
