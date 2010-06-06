@@ -15,7 +15,7 @@
       print $piwik["script"];
     ?>
     </script>
-    <noscript><p><img src="http://stats.tenach.net/piwik.php?idsite=<?php echo $piwik["siteID"]; ?>" style="border:0" alt="" /></p></noscript>
+    <noscript><p><img src="http://<?php echo $piwik["host"]; ?>/piwik.php?idsite=<?php echo $piwik["siteID"]; ?>" style="border:0" alt="" /></p></noscript>
     <?php
     }
     ?>
