@@ -71,6 +71,7 @@ if ( isset ( $_SESSION['id'] ) ) {
 <?php
 } else {
 ?>
+	<a href = "<?php echo $SITE_PREFIX; ?>t/register" >Register</a> | 
 	<a href = "<?php echo $SITE_PREFIX; ?>t/login" >Login</a>
 <?php
 }
