@@ -5,6 +5,14 @@ body {
 	margin:               0px;
 }
 
+a:visited {
+	color:                #523a1c;
+}
+
+a {
+	color:                #523a1c;
+}
+
 h1 {
 	font-size:            1.2em;
 	border-bottom:        1px solid #000000;
