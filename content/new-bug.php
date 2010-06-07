@@ -10,7 +10,7 @@ preload( 32, 32, "loading.png" );
 
 $TITLE = "Oh noes!";
 $CONTENT .= "
-<h1>So. You have a problem. Well whopdie do. Don't we all</h1>
+<h1>So. You have a problem. Well whoopdie do. Don't we all</h1>
 <br />
 <br />
 <div id = 'images' ></div>
