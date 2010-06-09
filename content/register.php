@@ -1,7 +1,9 @@
 <?php
+useScript('timezone.js');
 $TITLE    = "Register for Whube!";
 $CONTENT  = "
 <h1>So, you want an account, eh?</h1>
+<form action = '" . $SITE_PREFIX . "submit-register.php' method = 'post' >
 <table>
 	<tr>
 		<td>Desired Username</td>
@@ -29,11 +31,12 @@ $CONTENT  = "
 		<td><input type = 'password' name = 'pass1' id = 'pass1' /></td>
 	</tr>
 	<tr>
-		<td></td>
+		<td><input type = 'hidden' name = 'tz' id = 'tz' /></td>
 		<td></td>
 		<td><input type = 'submit' name = 'new-user' id = 'submit' value = 'will you remember me?' /></td>
 	</tr>
 </table>
+</form>
 ";
 
 ?>
