@@ -10,6 +10,7 @@ CREATE TABLE users (
 	locale         VARCHAR(8),
 	timezone       VARCHAR(8),
 	password       VARCHAR(255), /* HASHED, DUH */
+	startstamp     LONG,
 	trampstamp     LONG,
 	PRIMARY KEY( uID )
 );
@@ -22,6 +23,7 @@ INSERT INTO users VALUES (
 	'EN',
 	'-0500',
 	'ae2b1fca515949e5d54fb22b8ed95575',
+	1234567890,
 	1234567890
 );
 
@@ -31,6 +33,7 @@ CREATE TABLE user_rights (
 	staff          BOOL,
 	doner          BOOL,
 	member         BOOL,
+	startstamp     LONG,
 	trampstamp     LONG,
 	PRIMARY KEY( userID )
 );
@@ -41,6 +44,7 @@ INSERT INTO user_rights VALUES (
 	TRUE, /* STAFF */
 	TRUE, /* DONER */
 	TRUE, /* MEMBR */
+	1234567890,
 	1234567890
 );
 
@@ -50,6 +54,7 @@ CREATE TABLE projects (
 	descr          TEXT,
 	owner          INTEGER NOT NULL, /* FK, users */
 	active         BOOL,
+	startstamp     LONG,
 	trampstamp     LONG,
 	PRIMARY KEY( pID )
 );
@@ -60,6 +65,7 @@ INSERT INTO projects VALUES (
 	'whube',
 	'Whube is this project right here!',
 	1,
+	1234567890,
 	1234567890,
 	TRUE
 );
@@ -103,6 +109,7 @@ CREATE TABLE bugs (
 	owner          INTEGER NOT NULL, /* FK, users */
 	title          VARCHAR(255),
 	descr          TEXT,
+	startstamp     LONG,
 	trampstamp     LONG,
 	PRIMARY KEY ( bID )
 );

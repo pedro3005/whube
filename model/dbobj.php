@@ -48,6 +48,7 @@ class dbobj {
 		}
 		$this->sql->query( "INSERT INTO " . $this->table . " ( " . $keys . " ) VALUES ( " . $values . " );" );
 		$ID = $this->sql->getLastID();
+		$this->sql->query( "UPDATE " . $this->table . " SET startstamp=" . time() . " WHERE " . $this->pk_field . "=" . $ID . " ;" );
 		$this->sql->query( "UPDATE " . $this->table . " SET trampstamp=" . time() . " WHERE " . $this->pk_field . "=" . $ID . " ;" );
 		return $ID;
 	}

@@ -140,6 +140,9 @@ This bug is against <b>" . $project['project_name'] . "</b><br />
 <b>" . $reporter['real_name'] . " ( " . $reporter['username'] . " )</b>, that troublemaker, reported this bug.<br />
 ";
 
+$CONTENT .= " It was created <b>" . date( "F t, o", $reporter['startstamp'] ) . "</b>. ";
+$CONTENT .= " It was last updated <b>" . date( "F t, o", $reporter['trampstamp'] ) . "</b>.<br /> ";
+
 	if ( isset ( $owner['uID'] ) ) {
 		$CONTENT .= "This bug is being hacked on by <b>" . $owner['real_name'] . "</b><br />";
 	} else {
