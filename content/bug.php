@@ -29,7 +29,7 @@ if ( isset ( $row['bID'] ) ) {
 		$owner_info = "No owner!";
 	}
 
-	$TITLE = "Bug #" . $row['bID'];
+	$TITLE = "Bug #" . $row['bID'] . " | " . $row['title'];
 
 if ( loggedIn() ) {
 
