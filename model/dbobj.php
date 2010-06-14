@@ -47,7 +47,9 @@ class dbobj {
 			$values .= $value;
 		}
 		$this->sql->query( "INSERT INTO " . $this->table . " ( " . $keys . " ) VALUES ( " . $values . " );" );
-		return $this->sql->getLastID();
+		$ID = $this->sql->getLastID();
+		$this->sql->query( "UPDATE " . $this->table . " SET trampstamp=" . time() . " WHERE " . $this->pk_field . "=" . $ID . " ;" );
+		return $ID;
 	}
 
 	function updateByPK( $PK, $tables ) {
@@ -66,6 +68,7 @@ class dbobj {
 		}
 		$QUERY .= " WHERE " . $this->pk_field . " = '" . $PK . "';";
 		$this->sql->query( $QUERY );
+		$this->sql->query( "UPDATE " . $this->table . " SET trampstamp=" . time() . " WHERE " . $this->pk_field . "=" . $PK . ";" );
 	}
 
 	function specialSelect($query ) {
