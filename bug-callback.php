@@ -33,6 +33,8 @@ Array (
 
 // print_r( $_POST ); // data sent to us
 
+if ( isset ( $_POST['bID'] ) && $_POST['bID'] != "" ) {
+
 $bugid   = clean($_POST['bID'] );       /* Bug ID. This should NEVER be fucked with */
 $project = clean($_POST['project']);    /* New project of the bug ( perhaps )  */
 $title   = clean($_POST['title']);      /* New title of the bug ( perhaps )    */
@@ -97,5 +99,11 @@ header( "Location: " . $SITE_PREFIX . "t/bug/" . $bugid );
 exit(0);
 
 // */
+
+} else {
+	$_SESSION['msg'] = "Wtf, really";
+	header( "Location: " . $SITE_PREFIX . "t/bug-list/" . $bugid );
+	exit(0);
+}
 
 ?>
