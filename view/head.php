@@ -61,8 +61,9 @@ if ( isset ( $GUILT_ME ) && $GUILT_ME ) {
 }
 ?>
 		<div class = "nav" >
-<a href = "<?php echo $SITE_PREFIX; ?>t/home" >Home</a> | 
-<a href = "<?php echo $SITE_PREFIX; ?>t/bug-list" >Bug List</a> | 
+<a href = "<?php echo $SITE_PREFIX; ?>t/home"           >Home</a> | 
+<a href = "<?php echo $SITE_PREFIX; ?>t/bug-list"      >Bug List</a> | 
+<a href = "<?php echo $SITE_PREFIX; ?>t/project-list"  >Project List</a> | 
 <?php
 if ( isset ( $_SESSION['id'] ) ) {
 ?>

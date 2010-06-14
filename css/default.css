@@ -9,6 +9,10 @@ a:visited {
 	color:                #523a1c;
 }
 
+.code-snip {
+	font-family:          monospace;
+}
+
 a {
 	color:                #523a1c;
 }
