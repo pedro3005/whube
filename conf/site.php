@@ -11,6 +11,7 @@
 
 	$GUILT_ME = true; // The donate banner.
 	$TWEETER  = true; // Twitter stuff. check conf/twitter.php
+	$PIWIK    = false; // Piwik stats.  Check conf/piwik.php
 
 	// CONF THE FOLLOWING
 
