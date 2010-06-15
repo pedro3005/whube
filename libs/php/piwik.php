@@ -12,7 +12,7 @@
     document.write(unescape("%3Cscript src=\'" + pkBaseURL + "piwik.js\' type=\'text/javascript\'%3E%3C/script%3E"));
 
     try {
-      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 4);
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", ' . $piwik_site_id);
       piwikTracker.trackPageView();
       piwikTracker.enableLinkTracking();
     } catch( err ) {}
