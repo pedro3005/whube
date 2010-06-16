@@ -85,6 +85,9 @@ if ( $d['errors'] ) {
 	$body .= "No errors. Response: " . $d['message'] . "\n"
 }
 
+$body .= "\nThanks for your bug report!\n\n";
+$body .= " -- Whube Bugs\n\n"
+
 			$m->setBody(
 				$body
 			);
