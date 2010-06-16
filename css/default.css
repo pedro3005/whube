@@ -266,7 +266,22 @@ a img {
 input, textarea {
 	border:               1px solid #000000;
 	background-color:     #F6DCB2;
-	padding:              5px;
+
+}
+
+.bigme {
+	padding-left:         40px;
+	height:               32px; /* ICONASAURIS */
+	font-size:            20px;
+	background-repeat:    no-repeat;
+}
+
+.name {
+	background-image:     url(../imgs/user.png);
+}
+
+.password {
+	background-image:     url(../imgs/pass.png);
 }
 
 .holder {
