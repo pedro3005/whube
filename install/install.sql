@@ -19,7 +19,7 @@ INSERT INTO users VALUES (
 	'',
 	'Paul Tagliamonte',
 	'paultag',
-	'paultag@whube.com',
+	'paultag@gmail.com',
 	'EN',
 	'-0500',
 	'ae2b1fca515949e5d54fb22b8ed95575',
