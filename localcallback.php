@@ -45,6 +45,9 @@
 				);
 				$id = $b->createNew( $fields );
 
+				$d['errors']  = false;
+				$d['message'] = "New bug with ID '" + $id + ";";
+
 				if (
 					isset ( $meta['assign'] )
 				) {
@@ -52,6 +55,9 @@
 					$row = $o->getNext();
 					if ( isset ( $row['uID'] ) ) {
 						$b->updateByPK( $id, array( "owner" => $row['uID'] ) );
+						$d['message'] .= "\nAssigning this bug to " . $row['real_name'];
+					} else {
+						$d['message'] .= "\nCould not find '" . $meta['assign'] . "' in this DB.";
 					}
 				}
 
@@ -63,6 +69,9 @@
 					$row = $p->getNext();
 					if ( isset ( $row['pID'] ) ) {
 						$b->updateByPK( $id, array( "package" => $row['pID'] ) );
+						$d['message'] .= "\nAssigning this bug to project " . $row['project_name'];
+					} else {
+						$d['message'] .= "\nCould not find '" . $meta['assign'] . "' in this DB.";
 					}
 				}
 
@@ -72,14 +81,14 @@
 					$p->getByCol( "private", $meta['private'] );
 					if ( $meta['private'] ) {
 						$b->updateByPK( $id, array( "private" => true ) );
+						$d['message'] .= "\nMarking this bug private";
 					} else {
 						$b->updateByPK( $id, array( "private" => false ) );
+						$d['message'] .= "\nMarking this bug public";
 					}
 
 				}
 
-				$d['errors']  = false;
-				$d['message'] = "New bug with ID '" + $id + ";";
 			} else {
 				$d['errors']  = true;
 				$d['message'] = "Email ( " . $meta['email'] . " ) Unknown";
