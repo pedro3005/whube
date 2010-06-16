@@ -10,7 +10,7 @@
 	$PAGE_MAX_COUNT = 200;
 
 	$GUILT_ME = true; // The donate banner.
-	$TWEETER  = true; // Twitter stuff. check conf/twitter.php
+	$TWEETER  = false; // Twitter stuff. check conf/twitter.php
 	$PIWIK    = false; // Piwik stats.  Check conf/piwik.php
 
 	// CONF THE FOLLOWING

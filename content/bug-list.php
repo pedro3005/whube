@@ -39,10 +39,18 @@ while ( $row = $b->getNext() ) {
 	$p->getAllByPK( $row['package'] );
 	$package = $p->getNext();
 
-	if ( $i < $Count ) {
-		$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>" . $owner['real_name'] . "</td><td>" . $package['project_name'] . "</td><td><a href = '" . $SITE_PREFIX . "t/bug/" . $row['bID'] . "' >" . $row['title'] . "</a></td>\n\t</tr>\n";
+	if ( $row['private'] || $package['private'] ) {
+		if ( $i < $Count ) {
+			$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>Unknown</td><td>Private</td><td>Private</td>\n\t</tr>\n";
+		} else {
+			break;
+		}
 	} else {
-		break;
+		if ( $i < $Count ) {
+			$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>" . $owner['real_name'] . "</td><td>" . $package['project_name'] . "</td><td><a href = '" . $SITE_PREFIX . "t/bug/" . $row['bID'] . "' >" . $row['title'] . "</a></td>\n\t</tr>\n";
+		} else {
+			break;
+		}
 	}
 	$i++;
 }

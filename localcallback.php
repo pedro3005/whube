@@ -66,6 +66,18 @@
 					}
 				}
 
+				if (
+					isset ( $meta['private'] )
+				) {
+					$p->getByCol( "private", $meta['private'] );
+					if ( $meta['private'] ) {
+						$b->updateByPK( $id, array( "private" => true ) );
+					} else {
+						$b->updateByPK( $id, array( "private" => false ) );
+					}
+
+				}
+
 				$d['errors']  = false;
 				$d['message'] = "New bug with ID '" + $id + ";";
 			} else {

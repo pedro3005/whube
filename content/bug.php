@@ -16,6 +16,26 @@ $p = new project();
 $b->getAllByPK( $argv[1] );
 $row = $b->getNext();
 
+if ( $row['private'] && isset ( $row['bID'] ) ) {
+	// uh oh. let's make sure they are not punkassbitches
+
+	$reporter = $b->getReporter( $row['bID'] );
+	$owner    = $b->getOwner(    $row['bID'] );
+	$project  = $b->getProject(  $row['bID'] );
+
+	if (
+		( $reporter['uID'] != $_SESSION['id'] ) &&
+		(    $owner['uID'] != $_SESSION['id'] ) &&
+		(  $project['oID'] != $_SESSION['id'] )
+	) {
+		$_SESSION['err'] = "This is a private bug. You are not the owner, reporter or project leader.";
+		header("Location: " . $SITE_PREFIX . "t/home" );
+		exit(0);
+	} else {
+		$_SESSION['msg'] = "This is a private bug. Please keep this quiet.";
+	}
+}
+
 if ( isset ( $row['bID'] ) ) {
 
 	$p->getAllByPK( $row['package'] );

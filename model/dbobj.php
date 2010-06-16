@@ -22,7 +22,7 @@ class dbobj {
 	var $pk_field;
 
 	function dbobj( $table, $pk_field ) {
-    global $TABLE_PREFIX;
+		global $TABLE_PREFIX;
 		$this->table     = $TABLE_PREFIX.$table;
 		$this->pk_field  = $pk_field;
 		$this->sql       = new sql();

@@ -12,6 +12,7 @@ CREATE TABLE users (
 	password       VARCHAR(255), /* HASHED, DUH */
 	startstamp     LONG,
 	trampstamp     LONG,
+	private        BOOL DEFAULT FALSE,
 	PRIMARY KEY( uID )
 );
 
@@ -24,7 +25,8 @@ INSERT INTO users VALUES (
 	'-0500',
 	'ae2b1fca515949e5d54fb22b8ed95575',
 	1234567890,
-	1234567890
+	1234567890,
+	FALSE
 );
 
 CREATE TABLE user_rights ( 
@@ -33,8 +35,6 @@ CREATE TABLE user_rights (
 	staff          BOOL,
 	doner          BOOL,
 	member         BOOL,
-	startstamp     LONG,
-	trampstamp     LONG,
 	PRIMARY KEY( userID )
 );
 
@@ -43,9 +43,7 @@ INSERT INTO user_rights VALUES (
 	TRUE, /* ADMIN */
 	TRUE, /* STAFF */
 	TRUE, /* DONER */
-	TRUE, /* MEMBR */
-	1234567890,
-	1234567890
+	TRUE  /* MEMBR */
 );
 
 CREATE TABLE projects ( 
@@ -56,6 +54,7 @@ CREATE TABLE projects (
 	active         BOOL,
 	startstamp     LONG,
 	trampstamp     LONG,
+	private        BOOL DEFAULT FALSE,
 	PRIMARY KEY( pID )
 );
 
@@ -65,9 +64,10 @@ INSERT INTO projects VALUES (
 	'whube',
 	'Whube is this project right here!',
 	1,
+	TRUE,
 	1234567890,
 	1234567890,
-	TRUE
+	FALSE
 );
 
 CREATE TABLE status (
@@ -111,6 +111,7 @@ CREATE TABLE bugs (
 	descr          TEXT,
 	startstamp     LONG,
 	trampstamp     LONG,
+	private        BOOL DEFAULT FALSE,
 	PRIMARY KEY ( bID )
 );
 
