@@ -8,10 +8,11 @@
 
 	$ip = $_SERVER['REMOTE_ADDR'];
 
-	if ( $ip == "127.0.0.1" ) {
+	include( "conf/site.php" );
+	include( "libs/php/globals.php" );
 
-		include( "conf/site.php" );
-		include( "libs/php/globals.php" );
+	if ( $ip == $MY_IP ) {
+
 		include( "model/bug.php" );
 		include( "model/user.php" );
 		include( "model/project.php" );

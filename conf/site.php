@@ -16,6 +16,7 @@
 	// CONF THE FOLLOWING
 
 	$SITE_PREFIX   =   "http://localhost/whube/";
+	$MY_IP         =   "127.0.0.1";
 
 	array_push( $SCRIPT, "jQuery.js");  // dep
 	array_push( $SCRIPT, "effects.js"); // fade out messages etc.
