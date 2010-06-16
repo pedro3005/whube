@@ -47,6 +47,30 @@ function requireLogin() {
 	}
 }
 
+function checkBugViewAuth( $bugID, $requester ) {
+/* 
+
+if bug.private:
+	check if is owner
+	check if is reporter
+	check if is asignee
+	check if is project owner
+	check if site administrator / staff
+
+	any of the above: Yes, otherwise, no
+else:
+	Yes
+
+
+Query bug, if it's public, don't give a shit.
+
+
+*/
+
+return true; // FixMe!!!!
+
+}
+
 function loggedIn() {
 	if ( isset ( $_SESSION['id'] ) ) {
 		return true;
