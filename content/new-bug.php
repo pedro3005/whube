@@ -38,7 +38,7 @@ $CONTENT .= "
 </tr>
 <tr>
 	<td></td>
-	<td><div id = 'project-ok' ><img src = '" . $SITE_PREFIX . "imgs/32_space.png' alt = '' /></div></td>
+	<td><img src = '" . $SITE_PREFIX . "imgs/32_space.png' alt = '' /></td>
 	<td><input type = 'submit' value = 'Look, I made this for you!' /></td>
 </tr>
 	</table>

@@ -141,7 +141,7 @@ $CONTENT .= "</select></td>
 	</tr>
 	<tr>
 		<td></td>
-		<td></td>
+		<td><img src = '" . $SITE_PREFIX . "imgs/32_space.png' alt = '' /></td>
 		<td><input type = 'submit' value = 'Make it so' /></td>
 	</tr>
 </table>
