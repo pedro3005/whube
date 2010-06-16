@@ -16,6 +16,8 @@ $p = new project();
 $b->getAllByPK( $argv[1] );
 $row = $b->getNext();
 
+requireLogin();
+
 if ( $row['private'] && isset ( $row['bID'] ) ) {
 	// uh oh. let's make sure they are not punkassbitches
 
