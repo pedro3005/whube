@@ -57,7 +57,7 @@
 						$b->updateByPK( $id, array( "owner" => $row['uID'] ) );
 						$d['message'] .= "\nAssigning this bug to " . $row['real_name'];
 					} else {
-						$d['message'] .= "\nCould not find '" . $meta['assign'] . "' in this DB.";
+						$d['message'] .= "\nCould not find user '" . $meta['assign'] . "' in this DB.";
 					}
 				}
 
@@ -71,7 +71,7 @@
 						$b->updateByPK( $id, array( "package" => $row['pID'] ) );
 						$d['message'] .= "\nAssigning this bug to project " . $row['project_name'];
 					} else {
-						$d['message'] .= "\nCould not find '" . $meta['assign'] . "' in this DB.";
+						$d['message'] .= "\nCould not find project '" . $meta['project'] . "' in this DB.";
 					}
 				}
 
