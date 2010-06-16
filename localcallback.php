@@ -16,6 +16,7 @@
 		include( "model/bug.php" );
 		include( "model/user.php" );
 		include( "model/project.php" );
+		include( "model/mailer.php" );
 
 		$b = new bug();
 		$o = new user();
@@ -71,6 +72,16 @@
 				$d['errors']  = true;
 				$d['message'] = "Email ( " . $meta['email'] . " ) Unknown";
 			}
+
+			$m = new mailer();
+			$m->setTo(       $meta['email'] );
+			$m->setSubject(  "Bug Commands Processed" );
+			$m->setBody(
+"Errors:  " . $d['errors'] . "\n" .
+"Message: " . $d['message'] . "\n"
+			);
+			$m->send();
+
 		} else {
 			$d['errors']  = true;
 			$d['message'] = "Missing fields!";
@@ -82,4 +93,5 @@
 
 
 	echo json_encode($d);
+
 ?>
