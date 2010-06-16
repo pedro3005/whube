@@ -80,13 +80,13 @@
 $body = "Following are the results from the last whube bug email\n\n";
 
 if ( $d['errors'] ) {
-	$body .= "There were errors. The response was: " . $d['message'] . "\n"
+	$body .= "There were errors. The response was: " . $d['message'] . "\n";
 } else {
-	$body .= "No errors. Response: " . $d['message'] . "\n"
+	$body .= "No errors. Response: " . $d['message'] . "\n";
 }
 
 $body .= "\nThanks for your bug report!\n\n";
-$body .= " -- Whube Bugs\n\n"
+$body .= " -- Whube Bugs\n\n";
 
 			$m->setBody(
 				$body
