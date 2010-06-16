@@ -76,9 +76,17 @@
 			$m = new mailer();
 			$m->setTo(       $meta['email'] );
 			$m->setSubject(  "Bug Commands Processed" );
+
+$body = "Following are the results from the last whube bug email\n\n";
+
+if ( $d['errors'] ) {
+	$body .= "There were errors. The response was: " . $d['message'] . "\n"
+} else {
+	$body .= "No errors. Response: " . $d['message'] . "\n"
+}
+
 			$m->setBody(
-"Errors:  " . $d['errors'] . "\n" .
-"Message: " . $d['message'] . "\n"
+				$body
 			);
 			$m->send();
 
