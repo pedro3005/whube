@@ -84,6 +84,8 @@ What you will need:
 #
 #   -- Paul
 #
+# setup apache for rewrites
+sudo a2enmod rewrite # restart after this
 # Run the install/install.sql script against your MySQL server. 
 cd install
 mysql -u root -p < ./install.sql # this runs as MySQL user 'root'.
