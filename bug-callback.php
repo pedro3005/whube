@@ -43,6 +43,14 @@ $sever   = clean($_POST['severity']);   /* New severity of the bug ( perhaps ) *
 $owner   = clean($_POST['owner']);      /* New owner of the bug ( perhaps )    */
 $descr   = clean($_POST['descr']);      /* New descr of the bug ( perhaps )    */
 
+$priv = false;
+
+if ( isset( $_POST['private'] ) ) {
+	$priv = true;
+} else {
+	$priv = false;
+}
+
 $o = new user();
 $p = new project();
 
@@ -61,6 +69,7 @@ $posted_data = array(
 	"package"      => $projectID,
 	"owner"        => $ownerID,
 	"title"        => $title,
+	"private"      => $priv,
 	"descr"        => $descr
 );
 

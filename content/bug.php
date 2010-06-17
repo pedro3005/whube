@@ -86,6 +86,19 @@ if ( loggedIn() ) {
 		<td><div id = 'project-descr' >&nbsp;</div></td>
 	</tr>
 	<tr>
+		<td>Private</td>
+		<td></td>
+		<td><input type = 'checkbox' value = 'true' name = 'private' ";
+
+
+	if ( $row['private'] ) {
+		$CONTENT .= " checked='true' ";
+	}
+
+$CONTENT .= "/></textarea></td>
+	</tr>
+
+	<tr>
 		<td>Title</td>
 		<td></td>
 		<td><input value = \"" . $row['title'] . "\" type = 'text' name = 'title' /></td>
