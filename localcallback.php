@@ -31,6 +31,7 @@
 
 		if (
 			isset( $meta['email']   ) &&
+			isset( $meta['project'] ) &&
 			isset( $meta['title']   ) &&
 			isset( $meta['body']   )
 		) {
