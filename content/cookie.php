@@ -1,5 +1,7 @@
 <?php
 
+include( "libs/php/core.php" );
+
 $TITLE   = "lolwut, mirite?";
 $CONTENT = <<<FOO
 
@@ -30,5 +32,7 @@ $CONTENT = <<<FOO
 </table>
 
 FOO;
+
+$CONTENT .= "RUNNING VERSION " . $VERSION_STRING ;
 
 ?>
