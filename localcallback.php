@@ -90,6 +90,8 @@
 
 				}
 
+				$d['message'] .= "\n" . $SITE_PREFIX . "t/bug/" . $id;
+
 			} else {
 				$d['errors']  = true;
 				$d['message'] = "Email ( " . $meta['email'] . " ) Unknown";
