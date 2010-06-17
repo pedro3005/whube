@@ -39,7 +39,16 @@ while ( $row = $b->getNext() ) {
 	$p->getAllByPK( $row['package'] );
 	$package = $p->getNext();
 
-	if ( $row['private'] || $package['private'] ) {
+
+	if ( isset ( $_SESSION['id'] ) ) {
+		$id = $_SESSION['id'];
+	} else {
+		$id = -1; // NOT -10000!!!!!!
+	}
+
+	$privacy = checkBugViewAuth( $row['bID'], $id );
+
+	if ( ! $privacy[0] ) {
 		if ( $i < $Count ) {
 			$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>Unknown</td><td>Private</td><td>Private</td>\n\t</tr>\n";
 		} else {
@@ -47,7 +56,7 @@ while ( $row = $b->getNext() ) {
 		}
 	} else {
 		if ( $i < $Count ) {
-			$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>" . $owner['real_name'] . "</td><td>" . $package['project_name'] . "</td><td><a href = '" . $SITE_PREFIX . "t/bug/" . $row['bID'] . "' >" . $row['title'] . "</a></td>\n\t</tr>\n";
+			$CONTENT .= "\t<tr>\n<td> ( " . $privacy[1] . " ) " . $row['bID'] . "</td><td>" . $owner['real_name'] . "</td><td>" . $package['project_name'] . "</td><td><a href = '" . $SITE_PREFIX . "t/bug/" . $row['bID'] . "' >" . $row['title'] . "</a></td>\n\t</tr>\n";
 		} else {
 			break;
 		}

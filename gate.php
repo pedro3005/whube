@@ -34,6 +34,14 @@ if ( isset( $_POST['login'] ) ) {
 			$_SESSION['username']   =   $foo['username'];
 			$_SESSION['email']      =   $foo['email'];
 
+// set patrick_stewart var for private / public stuff
+//    $_SESSION['patrick_stewart'] = TRUE;
+// Context / copied from:
+//
+//  http://www.youtube.com/watch?v=Fg_cwI1Xj4M ( Nawt a rickroll )
+//     ^ this is lulzy. Watch.
+//
+
 			$_SESSION['msg'] = "Well done! Welcome in!";
 			header("Location: " . $SITE_PREFIX . "t/home");
 			exit(0);

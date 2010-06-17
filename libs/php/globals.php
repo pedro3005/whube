@@ -3,6 +3,9 @@
 $php_root = dirname(  __FILE__ ) . "/";
 
 include( $php_root . "../../model/sql.php" );
+include( $php_root . "../../model/user.php" );
+include( $php_root . "../../model/bug.php" );
+include( $php_root . "../../model/project.php" );
 
 $JS_ROOT = $php_root . "../js/";
 
@@ -48,6 +51,55 @@ function requireLogin() {
 }
 
 function checkBugViewAuth( $bugID, $requester ) {
+
+$b = new bug();
+$u = new user();
+$p = new project();
+
+$b->getAllByPK( $bugID );
+$bug = $b->getNext();
+
+if ( isset( $bug['bID'] ) ) {
+	if ( isset($_SESSION['patrick_stewart']) && $_SESSION['patrick_stewart'] ) { // see gate for context
+		return array( true, $bug['private'] ); // public bug, dummy
+	}
+
+	$whoami = $requester;
+
+	if ( $bug['private'] ) {
+		// good query.
+		$u->getAllByPK( $bug['owner'] );
+		$owner = $u->getNext();
+		$u->getAllByPK( $bug['reporter'] );
+		$reporter = $u->getNext();
+		$p->getAllByPK( $bug['package'] );
+		$project = $p->getNext();
+
+		$oid = -10000;
+		$rid = -10000;
+		$pid = -10000;
+
+		if ( isset ( $owner['uID'] ) )    { $oid = $owner['uID'];    }
+		if ( isset ( $reporter['uID'] ) ) { $rid = $reporter['uID']; }
+		if ( isset ( $project['oID'] ) )  { $pid = $project['oID'];  }
+
+		if (
+			$oid != $whoami &&
+			$rid != $whoami &&
+			$pid != $whoami
+		) {
+			return array( false, $bug['private'] );
+		} else {
+			return array( true, $bug['private'] );
+		}
+
+	} else {
+		return array( true, $bug['private'] ); // public bug, dummy
+	}
+} else {
+	return array( false, false ); // bug iz no good
+}
+
 /* 
 
 if bug.private:
@@ -66,8 +118,6 @@ Query bug, if it's public, don't give a shit.
 
 
 */
-
-return true; // FixMe!!!!
 
 }
 
