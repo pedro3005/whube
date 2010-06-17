@@ -2,6 +2,10 @@
 
 session_start();
 
+if ( ! isset ( $_SESSION['id'] ) ) {
+	$_SESSION['id'] = -1;
+}
+
 $app_root        = dirname(  __FILE__ ) . "/";
 $controller      = basename( __FILE__ );
 
