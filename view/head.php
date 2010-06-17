@@ -64,7 +64,7 @@ if ( isset ( $GUILT_ME ) && $GUILT_ME ) {
 <a href = "<?php echo $SITE_PREFIX; ?>t/bug-list"      >Bug List</a> | 
 <a href = "<?php echo $SITE_PREFIX; ?>t/project-list"  >Project List</a> | 
 <?php
-if ( isset ( $_SESSION['id'] ) ) {
+if ( isset ( $_SESSION['id'] ) && $_SESSION['id'] > 0) {
 ?>
 	<a href = "<?php echo $SITE_PREFIX; ?>t/new-bug" >New Bug</a> | 
 	<a href = "<?php echo $SITE_PREFIX; ?>t/logout" >Logout</a>

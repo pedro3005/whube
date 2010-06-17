@@ -1,6 +1,6 @@
 <?php
 
-if ( isset ( $_SESSION['id'] ) ) {
+if ( isset ( $_SESSION['id'] ) && $_SESSION['id'] > 0 ) {
 	header( "Location: " . $SITE_PREFIX . "t/home" );
 }
 
