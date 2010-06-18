@@ -27,7 +27,7 @@ $CONTENT .= "<h1>Last $Count bugs filed</h1>";
 $CONTENT .= "
 <table>
 	<tr>
-		<th>ID</th> <th>Private</th> <th>Owner</th> <th>Project</th> <th>Title</th>
+		<th>ID</th> <th>Owner</th> <th>Project</th> <th>Private</th> <th>Title</th>
 	</tr>
 ";
 
@@ -57,13 +57,13 @@ while ( $row = $b->getNext() ) {
 	if ( ! $privacy[0] ) {
 
 		if ( $i < $Count ) {
-			$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>" . $picon  . "</td><td>Unknown</td><td>Private</td><td>Private</td>\n\t</tr>\n";
+			$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>Unknown</td><td>Private</td><td>" . $picon  . "</td><td>Private</td>\n\t</tr>\n";
 		} else {
 			break;
 		}
 	} else {
 		if ( $i < $Count ) {
-			$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>" . $picon  . "</td><td>" . $owner['real_name'] . "</td><td>" . $package['project_name'] . "</td><td><a href = '" . $SITE_PREFIX . "t/bug/" . $row['bID'] . "' >" . $row['title'] . "</a></td>\n\t</tr>\n";
+			$CONTENT .= "\t<tr>\n<td>" . $row['bID'] . "</td><td>" . $owner['real_name'] . "</td><td>" . $package['project_name'] . "</td><td>" . $picon  . "</td><td><a href = '" . $SITE_PREFIX . "t/bug/" . $row['bID'] . "' >" . $row['title'] . "</a></td>\n\t</tr>\n";
 		} else {
 			break;
 		}
