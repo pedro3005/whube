@@ -42,15 +42,16 @@ isset ( $_POST['pass1']    )
     $numUsers = count( $users );
 
     $vuser = FALSE;
-    while( $i <= $numUsers ) {
-      if( $_POST['username'] == $users["username"] ) {
+    foreach( $users as $user ) {
+      if( $_POST['username'] == $user['username'] ) {
         $_SESSION['err'] = "Hey hey, someone already has that user name.";
         header("Location: $SITE_PREFIX" . "t/register");
       } else {
         $vuser = TRUE;
-        $i++;
       }
     }
+    
+
     
     if( $vuser == TRUE ) {
       $locale = explode( ',', $_SERVER['HTTP_ACCEPT_LANGUAGE'] );
