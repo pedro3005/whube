@@ -124,7 +124,7 @@ Query bug, if it's public, don't give a shit.
 }
 
 function loggedIn() {
-	if ( isset ( $_SESSION['id'] ) ) {
+	if ( isset ( $_SESSION['id'] ) && $_SESSION['id'] > 0 ) {
 		return true;
 	} else {
 		return false;
