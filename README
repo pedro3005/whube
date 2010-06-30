@@ -83,8 +83,6 @@ What you will need:
 #
 #   -- Paul
 #
-# get the module fur php
-sudo apt-get install php-mail
 # setup apache for rewrites
 sudo a2enmod rewrite # restart after this
 # Run the install/install.sql script against your MySQL server. 
