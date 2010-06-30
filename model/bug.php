@@ -42,6 +42,42 @@ class bug extends dbobj {
 		$p->getAllByPK( $row['package'] );
 		return $p->getNext();
 	}
+/*
+ *  FUCK YOU MOVING PHP STANDARDS
+ *
+ *  GAWD, FUCKING PHP MAILER. WHAT THE SHIT, ASSHOLE.
+ *
+ *  THIS WOULD HAVE ALMOST BEEN KINDA WORKING. NOW I HAVE TO 
+ *  REWRITE IT. GODDAMNIT. FUCK!
+ *
+
+	function updateEmail( $ID ) {
+	
+	        $this->getAllByPK( $ID );
+	        $bug = $this->getNext();
+	        
+	        $u = new user();
+	        
+  	        $reporters = array();
+	        
+	        $u->getAllByPK( $ID['reporter'] );
+	        $reporter = $u->getNext();
+	        
+	        array_push( $reporters, $reporter );
+	        
+	        $body = "Frob";
+	        
+	        foreach ( $reporters as $reporter ) {
+			    $m = new mailer();
+			    $m->setTo( $reporter['email'] );
+			    $m->setSubject( "Bug Updated!" );
+			    $m->setBody(
+			    	$body
+		    	);
+			    $m->send();
+			}
+	}
+	*/
 }
 }
 ?>

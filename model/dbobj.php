@@ -15,6 +15,8 @@ if ( ! class_exists( "sql" ) ) {
 }
 
 include( $model_root . "../conf/sql.php" );
+include ( $model_root . "mailer.php" );
+
 
 class dbobj {
 	var $sql;
@@ -49,9 +51,22 @@ class dbobj {
 		$this->sql->query( "INSERT INTO " . $this->table . " ( " . $keys . " ) VALUES ( " . $values . " );" );
 		$ID = $this->sql->getLastID();
 		$this->sql->query( "UPDATE " . $this->table . " SET startstamp=" . time() . " WHERE " . $this->pk_field . "=" . $ID . " ;" );
-		$this->sql->query( "UPDATE " . $this->table . " SET trampstamp=" . time() . " WHERE " . $this->pk_field . "=" . $ID . " ;" );
+        $this->updateRoutine( $ID );
 		return $ID;
 	}
+
+    function updateStamp( $ID ) {
+        $this->sql->query( "UPDATE " . $this->table . " SET trampstamp=" . time() . " WHERE " . $this->pk_field . "=" . $ID . " ;" );
+    }
+
+    function updateEmail( $ID ) {
+        // noop. Override.
+    }
+
+    function updateRoutine( $id ) {
+        $this->updateStamp( $id );
+        $this->updateEmail( $id );
+    }
 
 	function updateByPK( $PK, $tables ) {
 		$QUERY = "UPDATE " . $this->table . " SET ";
@@ -69,7 +84,7 @@ class dbobj {
 		}
 		$QUERY .= " WHERE " . $this->pk_field . " = '" . $PK . "';";
 		$this->sql->query( $QUERY );
-		$this->sql->query( "UPDATE " . $this->table . " SET trampstamp=" . time() . " WHERE " . $this->pk_field . "=" . $PK . ";" );
+        $this->updateRoutine( $PK );
 	}
 
 	function specialSelect($query ) {

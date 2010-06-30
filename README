@@ -59,7 +59,7 @@ What you will need:
      ( Anything that supports the .htaccess file in the root, with
        rewrite rules.                                               )
 
-  * PHP
+  * PHP ( WITH php-mail ) !!!php-mail 
      ( Well, the whole thing is written in PHP. If you ported this
        chances are it's not Whube anymore. Ship of Theseus kinda 
        thing. Although this is not the forum for such talk          )
@@ -83,6 +83,8 @@ What you will need:
 #
 #   -- Paul
 #
+# get the module fur php
+sudo apt-get install php-mail
 # setup apache for rewrites
 sudo a2enmod rewrite # restart after this
 # Run the install/install.sql script against your MySQL server. 
