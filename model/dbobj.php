@@ -17,6 +17,7 @@ if ( ! class_exists( "sql" ) ) {
 include( $model_root . "../conf/sql.php" );
 // include ( $model_root . "mailer.php" ); // FUCK yOU
 
+include( $model_root . "events.php" );
 
 class dbobj {
 	var $sql;
@@ -59,13 +60,13 @@ class dbobj {
         $this->sql->query( "UPDATE " . $this->table . " SET trampstamp=" . time() . " WHERE " . $this->pk_field . "=" . $ID . " ;" );
     }
 
-    function updateEmail( $ID ) {
+    function updateEvent( $ID ) {
         // noop. Override.
     }
 
     function updateRoutine( $id ) {
         $this->updateStamp( $id );
-        $this->updateEmail( $id );
+        $this->updateEvent( $id );
     }
 
 	function updateByPK( $PK, $tables ) {
