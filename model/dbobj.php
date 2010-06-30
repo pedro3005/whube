@@ -15,7 +15,6 @@ if ( ! class_exists( "sql" ) ) {
 }
 
 include( $model_root . "../conf/sql.php" );
-// include ( $model_root . "mailer.php" ); // FUCK yOU
 
 include( $model_root . "events.php" );
 
