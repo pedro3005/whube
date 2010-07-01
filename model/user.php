@@ -17,10 +17,6 @@ class user extends dbobj {
 	function user() {
 		dbobj::dbobj("users", "uID");
 	}
-	function updateEvent( $bID ) {
-		$u = new events();
-		$u->broadcast("USER UPDATE " . $bID );
-	}
 }
 }
 ?>

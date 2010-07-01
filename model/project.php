@@ -17,10 +17,6 @@ class project extends dbobj {
 	function project() {
 		dbobj::dbobj("projects", "pID");
 	}
-	function updateEvent( $bID ) {
-		$u = new events();
-		$u->broadcast("PROJECT UPDATE " . $bID );
-	}
 }
 }
 ?>

@@ -51,7 +51,7 @@ class dbobj {
 		$this->sql->query( "INSERT INTO " . $this->table . " ( " . $keys . " ) VALUES ( " . $values . " );" );
 		$ID = $this->sql->getLastID();
 		$this->sql->query( "UPDATE " . $this->table . " SET startstamp=" . time() . " WHERE " . $this->pk_field . "=" . $ID . " ;" );
-        $this->updateRoutine( $ID );
+        $this->updateRoutine( "new", $ID );
 		return $ID;
 	}
 
@@ -59,13 +59,14 @@ class dbobj {
         $this->sql->query( "UPDATE " . $this->table . " SET trampstamp=" . time() . " WHERE " . $this->pk_field . "=" . $ID . " ;" );
     }
 
-    function updateEvent( $ID ) {
-        // noop. Override.
+    function updateEvent( $STATUS, $ID ) {
+		$u = new events();
+		$u->broadcast( $this->table . " " . $STATUS . " " . $ID );
     }
 
-    function updateRoutine( $id ) {
+    function updateRoutine( $action, $id ) {
         $this->updateStamp( $id );
-        $this->updateEvent( $id );
+        $this->updateEvent( $action, $id );
     }
 
 	function updateByPK( $PK, $tables ) {
@@ -84,7 +85,7 @@ class dbobj {
 		}
 		$QUERY .= " WHERE " . $this->pk_field . " = '" . $PK . "';";
 		$this->sql->query( $QUERY );
-        $this->updateRoutine( $PK );
+        $this->updateRoutine( "update", $PK );
 	}
 
 	function specialSelect($query ) {

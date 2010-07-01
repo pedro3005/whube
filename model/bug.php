@@ -42,10 +42,6 @@ class bug extends dbobj {
 		$p->getAllByPK( $row['package'] );
 		return $p->getNext();
 	}
-	function updateEvent( $bID ) {
-		$u = new events();
-		$u->broadcast("BUG UPDATE " . $bID );
-	}
 }
 }
 ?>
