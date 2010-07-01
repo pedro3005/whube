@@ -15,9 +15,6 @@ if ( ! class_exists( "sql" ) ) {
 }
 
 include( $model_root . "../conf/sql.php" );
-
-include( $model_root . "events.php" );
-
 class dbobj {
 	var $sql;
 	var $table;
@@ -61,7 +58,10 @@ class dbobj {
 
     function updateEvent( $STATUS, $ID ) {
 		$u = new events();
-		$u->broadcast( $this->table . " " . $STATUS . " " . $ID );
+		$this->getAllByPK( $ID );
+		$row = $this->getNext();
+		$ret[$this->table] = $row;
+		$u->broadcast( json_encode($ret) );
     }
 
     function updateRoutine( $action, $id ) {

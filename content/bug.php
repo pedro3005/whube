@@ -4,10 +4,6 @@ useScript( "validate-user.php" );
 useScript( "validate-project.php" );
 useScript( "edit-menu.js" );
 
-include( "model/bug.php" );
-include( "model/user.php" );
-include( "model/project.php" );
-
 $b = new bug();
 $u = new user();
 $p = new project();

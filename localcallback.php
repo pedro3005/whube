@@ -1,8 +1,4 @@
 <?php
-	function clean( $ret ) {
-		return htmlentities( $ret, ENT_QUOTES);
-	}
-
 	$d['errors']  = true;
 	$d['message'] = "Unknown Error";
 
@@ -11,7 +7,7 @@
 	include( "conf/site.php" );
 	include( "libs/php/globals.php" );
 
-	if ( $ip == $MY_IP ) {
+	if ( $ip == $MY_IP ) { // check list
 
 		include( "model/bug.php" );
 		include( "model/user.php" );
