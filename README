@@ -1,17 +1,15 @@
+
 ========================================================================
 ===================       WHUBE BUG TRACKER        =====================
 ========================================================================
 
-License:        GNU AGPLv3 or later at option
-Author:         Paul Tagliamonte
+License:        GNU AGPLv3 or later
+Author:         Paul Tagliamonte & The Whube Developers
 E-Fax:          paultag [ at ] whube [ dot ] com
-
-
 
 ========================================================================
 ===================           DEDICATION           =====================
 ========================================================================
-
 
 Hey there hotshot. Are you part of the GNU Generation? Do you listen
 to Black Moth Super Rainbow? The Octopus Project? Blockhead? Air?
@@ -20,9 +18,7 @@ Been outside in the last two weeks? Seen the sun? ( although that
 is really not the best metric. One of the devs is up in Alaska.
 He won't see sun for twenty weeks at a time. )
 
-
 Yeah? Good. Read on. No? Go play with Bugzilla and Perl! ;)
-
 
 Still with us? Kickass. Whube is a bug tracker for us hipster nerds.
 Not real hipster, because they are lame, but cool hipster. Like trendy
@@ -40,10 +36,6 @@ management, Whube's your new toy.
 
      Viva la Hacking!
          Paul Tagliamonte ( paultag )
-
- .
-..:
-
 
 ========================================================================
 ===================        TECHNICAL SHIT          =====================
@@ -76,6 +68,7 @@ What you will need:
 ========================================================================
 ===================             SETUP              =====================
 ========================================================================
+
 #
 # Setup should be easy enough. Feel free to copy paste, although
 # if you can't figure this out, chances are you should not be doing it
@@ -94,3 +87,7 @@ cd ../conf/
 vim site.php
 # All set :) Give it a test!
 
+
+========================================================================
+ .
+..:
