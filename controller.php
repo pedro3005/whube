@@ -13,14 +13,17 @@ include( $app_root . "conf/site.php" );
 include( $app_root . "libs/php/globals.php" );
 include( $app_root . "libs/php/easter.php" );
 
-include( $app_root . "conf/site.php" );
-include( $app_root . "libs/php/globals.php" );
-
-include( $app_root . "model/sql.php" );
-include( $app_root . "model/bug.php" );
-include( $app_root . "model/user.php" );
-include( $app_root . "model/project.php" );
-include( $app_root . "model/events.php" );
+if ($handle = opendir( $app_root . "model/" )) {
+	while (false !== ($file = readdir($handle))) {
+		// The "i" after the pattern delimiter indicates a case-insensitive search
+		if ( $file != "." && $file != ".." ) {
+			$ftest = $file;
+			if (preg_match("/.*\.php$/i", $ftest)) {
+				include( $app_root . "model/" . $file );
+			}
+		}
+	}
+}
 
 header( "Wisdom-Turd: " . getQuip() );
 
