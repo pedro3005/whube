@@ -38,10 +38,14 @@ h1 {
 table {
 	font-size:            0.8em;
 	width:                100%;
-	border-spacing:       0px 5px;
+	border-spacing:       0px 0px;
 }
 
 tr {
+	width:                100%;
+}
+
+.sortable tr {
 	width:                100%;
 	background-image:     url(../imgs/bg-xp-w.png);
 }
