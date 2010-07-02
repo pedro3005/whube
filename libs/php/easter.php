@@ -1,4 +1,11 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    Spicy quips
+     */
+
 	$QUIP_LIST = array();
 	function addQuip( $qu ) {
 		global $QUIP_LIST;

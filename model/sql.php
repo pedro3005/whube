@@ -5,6 +5,7 @@
      *  Description:
      *    MySQL interface class.
      */
+
 if ( ! class_exists ( "sql" ) ) {
 class sql {
 

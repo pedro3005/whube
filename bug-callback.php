@@ -1,4 +1,11 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    Where you post a bug against
+     */
+
 session_start();
 
 include( "conf/site.php" );

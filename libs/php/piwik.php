@@ -1,4 +1,11 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Tenach M. <tenach@whube.com>
+     *  Description:
+     *    Piwik stuff
+     */
+
   function piwikJS() {
 
     $js_root	= dirname(  __FILE__ ) . "/";

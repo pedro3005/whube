@@ -5,6 +5,7 @@
      *  Description:
      *   bug class
      */
+
 if ( ! class_exists ( "bug" ) ) {
 
 if ( ! class_exists( "dbobj" ) ) {

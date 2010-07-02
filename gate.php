@@ -1,4 +1,11 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    Login gate. THOU SHAL NOT PASS
+     */
+
 session_start();
 
 include( "model/user.php" );

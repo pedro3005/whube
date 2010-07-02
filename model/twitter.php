@@ -1,4 +1,12 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    Twitter Module
+     */
+
+
 if ( ! class_exists( "twitter" ) ) {
 class twitter {
 

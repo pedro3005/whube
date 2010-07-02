@@ -1,4 +1,10 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    For the email daemon.
+     */
 	$d['errors']  = true;
 	$d['message'] = "Unknown Error";
 

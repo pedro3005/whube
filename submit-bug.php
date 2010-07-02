@@ -1,4 +1,10 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    You POST against this file
+     */
 session_start();
 
 include( "conf/site.php" );

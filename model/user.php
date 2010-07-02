@@ -5,6 +5,7 @@
      *  Description:
      *    uzer class
      */
+
 if ( ! class_exists ( "user" ) ) {
 
 if ( ! class_exists( "dbobj" ) ) {

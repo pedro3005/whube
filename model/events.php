@@ -5,6 +5,7 @@
      *  Description:
      *    DB OBJ class
      */
+
 if ( ! class_exists ( "events" ) ) {
 
 class events {

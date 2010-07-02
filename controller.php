@@ -1,4 +1,10 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    This controlls _everything_ in whube
+     */
 
 session_start();
 

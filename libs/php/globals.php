@@ -1,4 +1,10 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    Global Routines
+     */
 
 $php_root = dirname(  __FILE__ ) . "/";
 

@@ -1,4 +1,10 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Tenach M. <tenach@whube.com>
+     *  Description:
+     *    This is where you POST a new registration
+     */
 session_start();
 
 include( "conf/site.php" );

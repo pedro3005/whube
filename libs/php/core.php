@@ -1,5 +1,13 @@
 <?php
 
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    Core app data
+     */
+
+
 $VERSION         = "3.141";
 $VERSION_STRING  = "v$VERSION";
 

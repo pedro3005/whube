@@ -5,6 +5,7 @@
      *  Description:
      *    DB OBJ class
      */
+
 if ( ! class_exists ( "dbobj" ) ) {
 
 $model_root = dirname(  __FILE__ ) . "/";

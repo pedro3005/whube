@@ -1,4 +1,11 @@
 <?php
+    /*
+     *  License:     GPLv3
+     *  Author:      Tenach M. <tenach@whube.com>
+     *  Description:
+     *    Register Module
+     */
+
 
 if ( ! class_exists ( "register" ) ) {
 

@@ -1,4 +1,12 @@
 <?php
+
+    /*
+     *  License:     GPLv3
+     *  Author:      Paul Tagliamonte <paultag@whube.com>
+     *  Description:
+     *    Spicy!
+     */
+
 addQuip("A little sincerity is a dangerous thing, and a great deal of it is absolutely fatal.");
 addQuip("A man can be happy with any woman as long as he does not love her.");
 addQuip("Always forgive your enemies; nothing annoys them so much.");
