@@ -45,7 +45,6 @@ INSERT INTO user_rights VALUES (
 	TRUE, /* STAFF */
 	TRUE, /* DONER */
 	TRUE, /* MEMBR */
-	
 	FALSE /* BANNED */
 );
 
