@@ -20,4 +20,7 @@ class project extends dbobj {
 	}
 }
 }
+
+$PROJECT_OBJECT = new project();
+
 ?>

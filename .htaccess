@@ -1,6 +1,7 @@
 <IfModule mod_rewrite.c>
 
    RewriteEngine On
-   RewriteRule ^t/(.*+)      controller.php?p=$1   [NC]
+   RewriteRule ^t/(.*+)      controller.php?p=$1       [NC]
+   RewriteRule ^photo/(.*+)  libs/php/crest.php?p=$1   [NC]
 
 </IfModule>

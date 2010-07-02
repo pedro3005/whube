@@ -20,4 +20,7 @@ class user extends dbobj {
 	}
 }
 }
+
+$USER_OBJECT = new user();
+
 ?>

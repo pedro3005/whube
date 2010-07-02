@@ -35,6 +35,7 @@ CREATE TABLE user_rights (
 	staff          BOOL,
 	doner          BOOL,
 	member         BOOL,
+	banned         BOOL,
 	PRIMARY KEY( userID )
 );
 
@@ -43,7 +44,9 @@ INSERT INTO user_rights VALUES (
 	TRUE, /* ADMIN */
 	TRUE, /* STAFF */
 	TRUE, /* DONER */
-	TRUE  /* MEMBR */
+	TRUE, /* MEMBR */
+	
+	FALSE /* BANNED */
 );
 
 CREATE TABLE projects ( 

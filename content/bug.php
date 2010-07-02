@@ -4,9 +4,9 @@ useScript( "validate-user.php" );
 useScript( "validate-project.php" );
 useScript( "edit-menu.js" );
 
-$b = new bug();
-$u = new user();
-$p = new project();
+$b = $BUG_OBJECT;
+$u = $USER_OBJECT;
+$p = $PROJECT_OBJECT;
 
 
 $b->getAllByPK( $argv[1] );

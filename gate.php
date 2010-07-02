@@ -10,6 +10,7 @@ session_start();
 
 include( "model/user.php" );
 include( "conf/site.php" );
+include( "libs/php/globals.php" );
 
 if ( isset( $_POST['logout'] ) ) {
 	session_destroy();
@@ -35,11 +36,19 @@ if ( isset( $_POST['login'] ) ) {
 		$p_check = md5( $_SESSION['key'] . $foo['password'] );
 
 		if ( $_POST['pass'] == $p_check ) {
+			$_SESSION['rights'] = getRights( $foo['uID'] );
+			
+			if ( $_SESSION['rights']['banned'] ) {
+				$_SESSION['msg'] = "You're banned, asshole. GTFO";
+				header("Location: " . $SITE_PREFIX . "t/banned");
+				exit(0);
+			} else {
 
-			$_SESSION['id']         =   $foo['uID'];
-			$_SESSION['real_name']  =   $foo['real_name'];
-			$_SESSION['username']   =   $foo['username'];
-			$_SESSION['email']      =   $foo['email'];
+
+				$_SESSION['id']         =   $foo['uID'];
+				$_SESSION['real_name']  =   $foo['real_name'];
+				$_SESSION['username']   =   $foo['username'];
+				$_SESSION['email']      =   $foo['email'];
 
 // set patrick_stewart var for private / public stuff
 //    $_SESSION['patrick_stewart'] = TRUE;
@@ -49,9 +58,10 @@ if ( isset( $_POST['login'] ) ) {
 //     ^ this is lulzy. Watch.
 //
 
-			$_SESSION['msg'] = "Well done! Welcome in!";
-			header("Location: " . $SITE_PREFIX . "t/home");
-			exit(0);
+				$_SESSION['msg'] = "Well done! Welcome in!";
+				header("Location: " . $SITE_PREFIX . "t/home");
+				exit(0);
+			}
 		} else {
 			$_SESSION['err'] = "Login Failure. Check username and password.";
 			header("Location: " . $SITE_PREFIX . "t/login");

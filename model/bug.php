@@ -45,4 +45,8 @@ class bug extends dbobj {
 	}
 }
 }
+
+
+$BUG_OBJECT = new bug();
+
 ?>
