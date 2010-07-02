@@ -1,6 +1,7 @@
 <?php
 
 useScript("sorttable.js");
+useScript("tablehover.js");
 
 $Count = $PAGE_MAX_COUNT;
 
@@ -34,6 +35,10 @@ while ( $row = $b->getNext() ) {
 
 	$u->getAllByPK( $row['owner'] );
 	$owner = $u->getNext();
+
+	if ( $owner['uID'] <= 0 ) {
+		$owner['real_name'] = "Nobody";
+	}
 
 	$p->getAllByPK( $row['package'] );
 	$package = $p->getNext();

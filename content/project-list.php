@@ -1,6 +1,7 @@
 <?php
 
 useScript("sorttable.js");
+useScript("tablehover.js");
 
 $Count = $PAGE_MAX_COUNT;
 

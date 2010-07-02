@@ -45,9 +45,15 @@ tr {
 	width:                100%;
 }
 
+.highlight {
+	background-image:     url(../imgs/bg-xp-w.png);
+}
+.highlight-hold {
+	background-image:     url(../imgs/bg-xp-w.png);
+}
+
 .sortable tr {
 	width:                100%;
-	background-image:     url(../imgs/bg-xp-w.png);
 }
 
 .nobg {
