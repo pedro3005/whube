@@ -15,6 +15,8 @@ if ( ! class_exists( "sql" ) ) {
 }
 
 include( $model_root . "../conf/sql.php" );
+include( $model_root . "events.php" );
+
 class dbobj {
 	var $sql;
 	var $table;
