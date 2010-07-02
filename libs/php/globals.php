@@ -183,4 +183,14 @@ function getAllSeverity() {
 	return $ret;
 }
 
+function getRights( $id ) {
+	if ( isset ( $status ) ) {
+        global $TABLE_PREFIX;
+		$sql = new sql();
+		$sql->query("SELECT * FROM " . $TABLE_PREFIX . "user_rights WHERE userID = " . $id );
+		$ret = $sql->getNextRow();
+		return $ret;
+	}
+}
+
 ?>
