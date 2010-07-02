@@ -209,6 +209,10 @@ a img {
 	background-color:     #E16043;
 }
 
+.itsme {
+    color:                #5af477;
+}
+
 .message {
 	position:             fixed;
 	bottom:               0px;
