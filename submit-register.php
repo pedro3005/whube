@@ -3,6 +3,7 @@ session_start();
 
 include( "conf/site.php" );
 include( "model/user.php" );
+include( "model/events.php" );
 
 if (
 	isset ( $_POST['username'] ) &&
