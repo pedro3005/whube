@@ -1,5 +1,7 @@
 <?php
 
+useScript("sorttable.js");
+
 $Count = $PAGE_MAX_COUNT;
 
 if ( isset( $argv[2] ) ) {
@@ -14,7 +16,7 @@ $i = 0;
 $CONTENT .= "<h1>Last $Count projects created</h1>";
 
 $CONTENT .= "
-<table>
+<table class = 'sortable' >
 	<tr>
 		<th>Name</th> <th>Owner</th> <th>Bugs</th> <th>Private</th>
 	</tr>
