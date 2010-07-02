@@ -17,7 +17,7 @@ $CONTENT .= "<h1>Last $Count projects created</h1>";
 
 $CONTENT .= "
 <table class = 'sortable' >
-	<tr>
+	<tr class = 'nobg' >
 		<th>Name</th> <th>Owner</th> <th>Bugs</th> <th>Private</th>
 	</tr>
 ";

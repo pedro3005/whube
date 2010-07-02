@@ -23,9 +23,37 @@ h1 {
 	font-variant:         small-caps;
 }
 
+.sorttable_sorted_reverse {
+	background-image:     url(../imgs/sort-reverse.png);
+	background-position:  bottom right;
+	background-repeat:    no-repeat;
+}
+
+.sorttable_sorted {
+	background-image:     url(../imgs/sort-regular.png);
+	background-position:  bottom right;
+	background-repeat:    no-repeat;
+}
+
+table {
+	font-size:            0.8em;
+	width:                100%;
+	border-spacing:       0px 5px;
+}
+
+tr {
+	width:                100%;
+	background-image:     url(../imgs/bg-xp-w.png);
+}
+
+.nobg {
+	background-image:     none;
+}
+
 th {
 	border-bottom:        1px solid #000000;
 	padding:              5px;
+	text-align:           left;
 }
 
 td {

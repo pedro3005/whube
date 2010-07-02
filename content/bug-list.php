@@ -25,7 +25,7 @@ $CONTENT .= "<h1>Last $Count bugs filed</h1>";
 
 $CONTENT .= "
 <table class = 'sortable' >
-	<tr>
+	<tr class = 'nobg' >
 		<th>ID</th> <th>Owner</th> <th>Project</th> <th>Private</th> <th>Title</th>
 	</tr>
 ";
