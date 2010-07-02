@@ -12,10 +12,6 @@ include( "model/project.php" );
 
 $b = new bug();
 
-function clean( $ret ) {
-	return htmlentities( $ret, ENT_QUOTES);
-}
-
 /*
 
  --> get shiz via $_POST all like:
