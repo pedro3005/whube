@@ -16,6 +16,10 @@ function useScript( $id ) {
 	}
 }
 
+function clean( $ret ) {
+	return htmlentities( $ret, ENT_QUOTES);
+}
+
 function preload( $l, $w, $src ) {
 	global $PRELOAD;
 	$payload = array();

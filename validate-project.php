@@ -11,10 +11,6 @@ include( $app_root . "model/project.php" );
 
 $s = new sql();
 
-function clean( $foo ) {
-	return htmlentities($foo, ENT_QUOTES);
-}
-
 $d['errors'] = true;
 $d['success'] = false;
 $d['message'] = "Unknown error";

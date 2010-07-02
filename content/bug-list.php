@@ -8,9 +8,6 @@ if ( isset( $argv[2] ) ) {
 	// echo "Getting $id bugs filtering by $class";
 }
 
-include( "model/bug.php" );
-include( "model/user.php" );
-include( "model/project.php" );
 
 $b = new bug();
 $b->getAll();

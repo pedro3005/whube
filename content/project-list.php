@@ -7,10 +7,6 @@ if ( isset( $argv[2] ) ) {
 	$id    = htmlentities($argv[2], ENT_QUOTES);
 }
 
-include( "model/bug.php" );
-include( "model/user.php" );
-include( "model/project.php" );
-
 $TITLE = "Latest $Count projects";
 
 $i = 0;

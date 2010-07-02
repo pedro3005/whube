@@ -4,6 +4,7 @@
 			Copyright (c) Whube Hackers, 2009 - <?php echo date("o"); ?><br />Peace and Love to Y'all.
 				<div class = "clear" ></div>
 		</div>
+		<div class = "shoe" ></div>
     <?php
     if ( isset ( $PIWIK ) && $PIWIK ) {
       $view_root = dirname(  __FILE__ ) . "/";

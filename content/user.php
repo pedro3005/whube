@@ -1,7 +1,4 @@
 <?php
-include( "model/user.php" );
-include( "model/project.php" );
-include( "model/bug.php" );
 
 $p = new project();
 $b = new bug();
